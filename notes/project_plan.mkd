@@ -1,0 +1,19 @@
+# GenAI Project Template
+
+1. Define use case
+2. Chose an existing model or pretrain your own
+3. Adapt and align model
+  - prompt engineering
+  - fine tunning
+  - align with human feedback
+4. Evaluate
+5. Optimize
+6. Deploy
+
+## Tools and sources:
+  
+7. Use case: genai for chatbot
+8. Existings models:
+   1. LLama2 
+   2. 
+
