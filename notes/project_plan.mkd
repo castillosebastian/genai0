@@ -10,7 +10,7 @@
 5. Optimize
 6. Deploy
 
-## Tools and sources:
+## Tools and resources:
   
 1. Use case: genai for chatbot
    
