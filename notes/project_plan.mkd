@@ -23,10 +23,11 @@
 
 
 3. Adapt and Align:   
-   AA:Prompt:    
+   
+AA:Prompt:    
    1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
-   AA:FineTune:   
-   2. [AdaptLLMstoDomains](https://huggingface.co/AdaptLLM/finance-LLM)
-   3. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
-   AA: Aling and HF    
-   4. []()
+AA:FineTune:   
+   1. [AdaptLLMstoDomains](https://huggingface.co/AdaptLLM/finance-LLM)
+   2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
+AA: Aling and HF    
+   1. []()
