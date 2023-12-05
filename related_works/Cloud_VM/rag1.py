@@ -3,26 +3,33 @@ import utils
 import os
 import requests
 import llama_index
+import torch
+import llama_cpp
 
 from llama_index import SimpleDirectoryReader
 from llama_index import Document
 from llama_index import VectorStoreIndex
 from llama_index import ServiceContext
-
+from llama_index import LLMPredictor
 
 # Paramas
 llama = True
 
 ### Get data
+dirpath = 'related_works/Cloud_VM/'
+filename = dirpath + 'ey.pdf'
 url = 'https://assets.ey.com/content/dam/ey-sites/ey-com/nl_nl/topics/jaarverslag/downloads-pdfs/2022-2023/ey-nl-financial-statements-2023-en.pdf'
-response = requests.get(url)
-with open('ey.pdf', 'wb') as f:
-    f.write(response.content)
 
+if not os.path.exists(filename):
+    print(f"Downloading {filename} from {url}...")    
+    response = requests.get(url)
+    with open(dirpath + 'ey.pdf', 'wb') as f:
+        f.write(response.content)
 
 documents = SimpleDirectoryReader(
-    input_files=["ey.pdf"]
+    input_files=[filename]
 ).load_data()
+
 
 ### Print data
 print(type(documents), "\n")
@@ -39,8 +46,6 @@ model_name_or_path = "TheBloke/Llama-2-13B-chat-GGML"
 model_basename = "llama-2-13b-chat.ggmlv3.q5_1.bin" # the model is in bin format
 from huggingface_hub import hf_hub_download
 model_path = hf_hub_download(repo_id=model_name_or_path, filename=model_basename)
-
-
 
 if llama:
     # GPU
@@ -59,6 +64,38 @@ else:
     llm = LlamaForCausalLM.from_pretrained('ChanceFocus/finma-7b-full', device_map='auto')
 
 
+##### The replicate endpoint
+from llama_index.llms import Replicate
+from llama_index import ServiceContext, set_global_service_context
+from llama_index.llms.llama_utils import (
+    messages_to_prompt,
+    completion_to_prompt,
+)
+LLAMA_13B_V2_CHAT = "a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5"
+
+# inject custom system prompt into llama-2
+def custom_completion_to_prompt(completion: str) -> str:
+    return completion_to_prompt(
+        completion,
+        system_prompt=(
+            "You are a Q&A assistant. Your goal is to answer questions as "
+            "accurately as possible is the instructions and context provided."
+        ),
+    )
+
+
+llm = Replicate(
+    model=LLAMA_13B_V2_CHAT,
+    temperature=0.01,
+    # override max tokens since it's interpreted
+    # as context window instead of max tokens
+    context_window=4096,
+    # override completion representation for llama 2
+    completion_to_prompt=custom_completion_to_prompt,
+    # if using llama 2 for data agents, also override the message representation
+    messages_to_prompt=messages_to_prompt,
+)
+
 service_context = ServiceContext.from_defaults(
     llm=llm, embed_model="local:BAAI/bge-small-en-v1.5"
 )
@@ -68,7 +105,7 @@ index = VectorStoreIndex.from_documents([document],
 query_engine = index.as_query_engine()
 
 response = query_engine.query(
-    "What are steps to take when finding projects to build your experience?"
+    "What actions is Ernst & Young Global Limited taking to address climate change issues?"
 )
 print(str(response))
 
