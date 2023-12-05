@@ -20,3 +20,7 @@ faiss-cpu
 datasets
 retro-pytorch
 sacremoses
+utils
+llama-index
+llama_cpp
+pypdf
