@@ -22,5 +22,7 @@ retro-pytorch
 sacremoses
 utils
 llama-index
-llama_cpp
+llama-cpp-python
 pypdf
+huggingface_hub
+transformers
