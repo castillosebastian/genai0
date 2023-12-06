@@ -49,6 +49,7 @@ sudo code-server --install-extension pivotal.vscode-boot-dev-pack
 sudo python3 -m pip install torch pandas numpy polars black ipykernel \
     ipywidgets pathlib seaborn dill optuna deap pandas-datareader scikit-learn \
     mlflow pyyaml tiktoken transformers faiss-cpu datasets retro-pytorch sacremoses \
-    evaluate rouge_score loralib peft langchain utils pypdf llama-index
+    evaluate rouge_score loralib peft langchain utils pypdf llama-index llama-cpp-python \
+    huggingface-hub
 
 

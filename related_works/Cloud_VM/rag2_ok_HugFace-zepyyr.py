@@ -11,13 +11,13 @@ Note: Responses from local models can be quite slow, especially with 8-bit quant
 With 4bit quantization, `HuggingFaceH4/zephyr-7b-beta` uses about 8GB of VRAM and spiked to 14GB of RAM when loading the model, then settled around 5GB. I used a T4 instance for this notebook.
 """
 
-!pip install llama-index transformers accelerate bitsandbytes
+#!pip install llama-index transformers accelerate bitsandbytes
 
 """## Setup
 
 ### Data
 """
-
+import llama_index
 from llama_index.readers import BeautifulSoupWebReader
 
 url = "https://www.theverge.com/2023/9/29/23895675/ai-bot-social-network-openai-meta-chatbots"
@@ -30,17 +30,8 @@ This should run on a T4 instance on the free tier
 """
 
 import torch
-from transformers import BitsAndBytesConfig
 from llama_index.prompts import PromptTemplate
 from llama_index.llms import HuggingFaceLLM
-
-quantization_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.float16,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_use_double_quant=True,
-)
-
 
 def messages_to_prompt(messages):
   prompt = ""
@@ -68,7 +59,7 @@ llm = HuggingFaceLLM(
     query_wrapper_prompt=PromptTemplate("<|system|>\n</s>\n<|user|>\n{query_str}</s>\n<|assistant|>\n"),
     context_window=3900,
     max_new_tokens=256,
-    model_kwargs={"quantization_config": quantization_config},
+    # model_kwargs={"quantization_config": quantization_config},
     # tokenizer_kwargs={},
     generate_kwargs={"temperature": 0.7, "top_k": 50, "top_p": 0.95},
     messages_to_prompt=messages_to_prompt,
@@ -90,9 +81,8 @@ from llama_index import SummaryIndex
 summary_index = SummaryIndex.from_documents(documents, service_context=service_context)
 
 """### Helpful Imports / Logging"""
-
-from llama_index.response.notebook_utils import display_response
-
+#import matplotlib
+#from llama_index.response.notebook_utils import display_response
 import logging
 import sys
 
@@ -116,15 +106,15 @@ query_engine = vector_index.as_query_engine(response_mode="refine")
 
 response = query_engine.query("How do OpenAI and Meta differ on AI tools?")
 
-display_response(response)
+print(response)
 
 """### Tree Summarize"""
 
 query_engine = vector_index.as_query_engine(response_mode="tree_summarize")
 
-response = query_engine.query("How do OpenAI and Meta differ on AI tools?")
+response_2 = query_engine.query("How do OpenAI and Meta differ on AI tools?")
 
-display_response(response)
+print(response_2)
 
 """## Router Query Engine"""
 
@@ -156,9 +146,9 @@ query_engine = RouterQueryEngine.from_defaults(
     select_multi=False
 )
 
-response = query_engine.query("What was mentioned about Meta?")
+response_3 = query_engine.query("What was mentioned about Meta?")
 
-display_response(response)
+print(response_3)
 
 """### Multi Selector"""
 
@@ -170,9 +160,9 @@ query_engine = RouterQueryEngine.from_defaults(
     select_multi=True,
 )
 
-response = query_engine.query("What was mentioned about Meta? Summarize with any other companies mentioned in the entire document.")
+response_4 = query_engine.query("What was mentioned about Meta? Summarize with any other companies mentioned in the entire document.")
 
-display_response(response)
+print(response_4)
 
 """## SubQuestion Query Engine"""
 
@@ -205,9 +195,9 @@ query_engine = SubQuestionQueryEngine.from_defaults(
     verbose=True,
 )
 
-response = query_engine.query("What was mentioned about Meta? How Does it differ from how OpenAI is talked about?")
+response_5 = query_engine.query("What was mentioned about Meta? How Does it differ from how OpenAI is talked about?")
 
-display_response(response)
+print(response_5)
 
 """## SQL Query Engine
 
