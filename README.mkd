@@ -1,4 +1,6 @@
-# GenAI Project Template by Deeplearning.ai
+# GenAI Project Template and Notes 
+
+## Insipred by [Deeplearning.ai](https://www.deeplearning.ai/courses/generative-ai-with-llms/)
 
 1. Define use case
 2. Chose an existing model or pre-train your own
@@ -15,7 +17,7 @@
 1. Use case **Genai for chatbot in the Finance Sector**:
    1. Architecture definitions?
    2. Use cases? RAG? 
-   3. Data characteristics and format?
+   3. Data characteristics and format? see: *tables-doc-problem*, 
    4. Legal compliance requirements? eg. [EU_AI_Act](https://artificialintelligenceact.com/)
    
 2. Existing models:
@@ -23,7 +25,7 @@
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)    
   
-  Private: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
+  Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
 
 3. Adapt and Align (AA):  
    
@@ -34,6 +36,18 @@ AA:FineTune:
    2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
 AA: Aling and HF    
    1. [Pearl](https://pearlagent.github.io/)
+
+4. Evaluation
+   1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
+   2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
+   3. [notes1](https://www.philschmid.de/evaluate-llm)
+
+5. Optimize
+   1. ...
+
+6. Deploy
+   1. ...
+
 
 ## Scripts Tested
 
