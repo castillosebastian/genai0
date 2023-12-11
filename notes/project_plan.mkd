@@ -1,4 +1,4 @@
-# GenAI Project Template
+# GenAI Project Template by Deeplearning.ai
 
 1. Define use case
 2. Chose an existing model or pre-train your own
@@ -12,17 +12,22 @@
 
 ## Tools and resources:
   
-1. Use case: genai for chatbot
+1. Use case: 
+   Genai for chatbot:
+   1. Architecture definitions?
+   2. Use cases?
+   3. Data characteristics and format?
+   4. Legal compliance requirements?
    
 2. Existing models:
-   1. [LLama2]() 
+   1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) 
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)    
   
   Private: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
 
 
-3. Adapt and Align:   
+3. Adapt and Align (AA):  
    
 AA:Prompt:    
    1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
@@ -31,3 +36,9 @@ AA:FineTune:
    2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
 AA: Aling and HF    
    1. []()
+
+
+## Scripts Tested
+
+1. 
+
