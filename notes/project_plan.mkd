@@ -12,12 +12,11 @@
 
 ## Tools and resources:
   
-1. Use case: 
-   Genai for chatbot:
+1. Use case **Genai for chatbot in the Finance Sector**:
    1. Architecture definitions?
-   2. Use cases?
+   2. Use cases? RAG? 
    3. Data characteristics and format?
-   4. Legal compliance requirements?
+   4. Legal compliance requirements? eg. [EU_AI_Act](https://artificialintelligenceact.com/)
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) 
@@ -25,7 +24,6 @@
    3. [FinGPT](https://huggingface.co/FinGPT)    
   
   Private: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
-
 
 3. Adapt and Align (AA):  
    
@@ -40,5 +38,6 @@ AA: Aling and HF
 
 ## Scripts Tested
 
-1. 
+1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
+2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
 
