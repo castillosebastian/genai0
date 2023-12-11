@@ -2,6 +2,10 @@
 
 ## Inspired by [Deeplearning.ai](https://www.deeplearning.ai/courses/generative-ai-with-llms/)
 
+This repository maintains a limited selection of resources and articles related to the field of GenAI and its application to chatbots (with a focus on RAG-type architectures). The general purpose is to test the solutions proposed in this field using open source LLMs. Any contribution is welcome.    
+
+In this context, we divided the content of our notes and testing following the GenAI development applications model proposed in the course dictated by Deeplearning.ai. The model or template has 6 steps: 
+
 1. Define use case
 2. Chose an existing model or pre-train your own
 3. Adapt and align model
@@ -11,6 +15,8 @@
 4. Evaluate
 5. Optimize
 6. Deploy
+
+This are the tools and notes: 
 
 ## Tools and resources:
   
@@ -52,6 +58,7 @@
 
 All testing is made in a VM on Google Cloud free tier: 24 vCPU, 60G RAM, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE.
 
-1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
-2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
+2. Models tested
+   1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
+   2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
 
