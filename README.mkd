@@ -5,9 +5,9 @@
 1. Define use case
 2. Chose an existing model or pre-train your own
 3. Adapt and align model
-  - prompt engineering
-  - fine tunning
-  - align with human feedback
+   1. prompt engineering
+   2. fine tunning
+   3. align with human feedback
 4. Evaluate
 5. Optimize
 6. Deploy
@@ -28,14 +28,13 @@
   Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
 
 3. Adapt and Align (AA):  
-   
-AA:Prompt:    
-   1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
-AA:FineTune:   
-   1. [AdaptLLMstoDomains](https://huggingface.co/AdaptLLM/finance-LLM)
-   2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
-AA: Aling and HF    
-   1. [Pearl](https://pearlagent.github.io/)
+   1. AA:Prompt:    
+      1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
+   2. AA:FineTune:   
+      1. [AdaptLLMstoDomains](https://huggingface.co/AdaptLLM/finance-LLM)
+      2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): sumarization and NER.
+   3. AA: Aling and HF    
+      1. [Pearl](https://pearlagent.github.io/)
 
 4. Evaluation
    1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
