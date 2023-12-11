@@ -24,10 +24,10 @@ This are the tools and notes:
    1. Architecture definitions?
    2. Use cases? RAG? 
    3. Data characteristics and format? see: *tables-doc-problem*, 
-   4. Legal compliance requirements? eg. [EU_AI_Act](https://artificialintelligenceact.com/)
+   4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/)
    
 2. Existing models:
-   1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) 
+   1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [2]() 
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)    
   
