@@ -1,4 +1,4 @@
-# GenAI Project Template and Notes 
+# GenAI Project Template and Notes (periodically updated)
 
 ## Inspired by [Deeplearning.ai](https://www.deeplearning.ai/courses/generative-ai-with-llms/)
 
