@@ -50,6 +50,8 @@
 
 ## Scripts Tested
 
+All testing is made in a VM on Google Cloud free tier: 24 VCPU, 60G RAM, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE.
+
 1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
 2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
 
