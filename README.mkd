@@ -31,7 +31,7 @@ This are the tools and resources:
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
-   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961)      
+   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961), [4](https://arxiv.org/pdf/2305.14705.pdf)      
    6. ...
    7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564)  
 
