@@ -27,13 +27,16 @@ This are the tools and notes:
    4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/)
    
 2. Existing models:
-   1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [2]() 
+   1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
-   3. [FinGPT](https://huggingface.co/FinGPT)    
+   3. [FinGPT](https://huggingface.co/FinGPT)
+   4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
+   5. [Mistral-8x7b-SMoe](https://mistral.ai/news/mixtral-of-experts/#:~:text=Mixtral%20is%20a%20sparse%20mixture,and%20combine%20their%20output%20additively.)    
+   
   
   Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
 
-3. Adapt and Align (AA):  
+1. Adapt and Align (AA):  
    1. AA:Prompt:    
       1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
    2. AA:FineTune:   
@@ -42,16 +45,16 @@ This are the tools and notes:
    3. AA: Aling and HF    
       1. [Pearl](https://pearlagent.github.io/)
 
-4. Evaluation
+2. Evaluation
    1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
    2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
    3. [notes1](https://www.philschmid.de/evaluate-llm)
 
-5. Optimize
-   1. ...
+3. Optimize
+   ...
 
-6. Deploy
-   1. ...
+4. Deploy
+   ...
 
 
 ## Scripts Tested
@@ -68,4 +71,5 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
    1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
    2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
    3. [FinMa-7b-full_part1](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag4_FinMA-7bfull.py)
+   4. [Mistral7b-Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag5_Mistral7b_Q4.py)
 
