@@ -26,3 +26,4 @@ llama-cpp-python
 pypdf
 huggingface-hub
 transformers
+accelerate

@@ -56,9 +56,16 @@ This are the tools and notes:
 
 ## Scripts Tested
 
-All testing is made in a VM on Google Cloud free tier: 24 vCPU, 60G RAM, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE.
+All testing is made in a VM on Google Cloud free tier: 24 vCPU, 84G RAM, 100G Disco, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE. The steps are:
+
+a. `python3 -m venv ~/.genai0`
+b. `source  ~/.genai0/bin/activate`
+c. `python3 -m pip install --upgrade pip`
+d. `pip install -r requirements.txt`
+e. Set interpreter in Project settings: Type and select "Python: Select Interpreter." Choose the interpreter from your .genai0 virtual environment. It should be something like /root/.genai0/bin/python3.
 
 2. Models tested
    1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
    2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
+   3. [FinMa-7b-full_part1](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag4_FinMA-7bfull.py)
 

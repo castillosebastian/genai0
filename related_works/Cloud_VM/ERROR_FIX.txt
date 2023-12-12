@@ -1,0 +1,15 @@
+# ERRORS
+
+## pip
+
+python -m pip install --upgrade pip
+pip cache purge
+
+
+## interpreter
+Select the Interpreter Manually:
+Open your project in VS Code.
+Press Ctrl + Shift + P to open the Command Palette.
+Type and select "Python: Select Interpreter."
+Choose the interpreter from your .genai0 virtual environment. It should be something like /root/.genai0/bin/python3.
+Once selected, VS Code should use this interpreter for the Python extension and the integrated terminal.

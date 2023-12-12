@@ -45,11 +45,6 @@ sudo code-server --install-extension richardwillis.vscode-gradle
 sudo code-server --install-extension pivotal.vscode-spring-boot
 sudo code-server --install-extension pivotal.vscode-boot-dev-pack
 
-# Installing Python libraries
-sudo python3 -m pip install torch pandas numpy polars black ipykernel \
-    ipywidgets pathlib seaborn dill optuna deap pandas-datareader scikit-learn \
-    mlflow pyyaml tiktoken transformers faiss-cpu datasets retro-pytorch sacremoses \
-    evaluate rouge_score loralib peft langchain utils pypdf llama-index llama-cpp-python \
-    huggingface-hub
+
 
 

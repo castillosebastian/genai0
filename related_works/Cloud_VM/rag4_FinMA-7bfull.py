@@ -6,7 +6,29 @@ todo:
     -30b : https://huggingface.co/ChanceFocus/finma-30b-nlp/tree/main 
         135 GB only model 
 '''
+# First example
+from transformers import LlamaTokenizer, LlamaForCausalLM
 
+tokenizer = LlamaTokenizer.from_pretrained('ChanceFocus/finma-7b-full')
+model = LlamaForCausalLM.from_pretrained('ChanceFocus/finma-7b-full', device_map='auto')
+
+prompt = "Hey, are you conscious? Can you talk to me?"
+inputs = tokenizer(prompt, return_tensors="pt")
+generate_ids = model.generate(inputs.input_ids, max_length=30)
+response = tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
+print(response)
+
+"""
+A more financial question
+"""
+prompt = "Explain inflation"
+inputs = tokenizer(prompt, return_tensors="pt")
+generate_ids = model.generate(inputs.input_ids) # 50G RAM in use
+response = tokenizer.batch_decode(generate_ids)[0]
+print(response)
+
+###
+'''
 from llama_index import (
     SimpleDirectoryReader,
     VectorStoreIndex,
@@ -18,15 +40,6 @@ from llama_index.llms.llama_utils import (
     completion_to_prompt,
 )
 
-"""## Setup LLM
-work with FinMa
-
-"""
-
-#!pip install llama-index
-import llama_index
-
-model_url = "https://huggingface.co/ChanceFocus/finma-7b-full/tree/main"
 
 llm = LlamaCPP(
     # You can pass in the URL to a GGML model to download it automatically
@@ -48,13 +61,8 @@ llm = LlamaCPP(
     verbose=True,
 )
 
-"""We can tell that the model is using `metal` due to the logging!
-## Start using our `LlamaCPP` LLM abstraction!
-We can simply use the `complete` method of our `LlamaCPP` LLM abstraction to generate completions given a prompt.
-"""
 
-response = llm.complete("Hello! Can you tell what is love for Socrates")
-print(response.text)
+
 
 """We can use the `stream_complete` endpoint to stream the response as it’s being generated rather than waiting for the entire response to be generated."""
 
@@ -119,3 +127,4 @@ response = query_engine.query("Can you explain the EY risk management framework"
 print(response)
 # Calidad aceptable
  
+'''
