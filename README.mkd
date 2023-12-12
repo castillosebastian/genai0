@@ -56,7 +56,7 @@ This are the tools and notes:
 
 ## Scripts Tested
 
-All testing is made in a VM on Google Cloud free tier: 24 vCPU, 84G RAM, 100G Disk, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE. The steps are:
+All testing is made in a VM on Google Cloud free tier: 24 vCPU, 84G RAM, 100G Disk, Ubuntu 22. I made an installation [script](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/instalar.sh) to run a non-secure IDE. When the installation is finish, to create the Python environment follow:
 
 a. `python3 -m venv ~/.genai0`   
 b. `source  ~/.genai0/bin/activate`   
