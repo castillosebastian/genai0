@@ -16,7 +16,7 @@ In this context, we divided the content of our notes and testing following the G
 5. Optimize
 6. Deploy
 
-This are the tools and notes: 
+This are the tools and resources: 
 
 ## Tools and resources:
   
@@ -32,11 +32,10 @@ This are the tools and notes:
    3. [FinGPT](https://huggingface.co/FinGPT)
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
    5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral)    
-   
-  
-  Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
+   6. ...
+   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
 
-1. Adapt and Align (AA):  
+3. Adapt and Align (AA):  
    1. AA:Prompt:    
       1. [MedPrompt](https://arxiv.org/abs/2311.16452)    
    2. AA:FineTune:   
@@ -45,15 +44,15 @@ This are the tools and notes:
    3. AA: Aling and HF    
       1. [Pearl](https://pearlagent.github.io/)
 
-2. Evaluation
+4. Evaluation
    1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
    2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
    3. [notes1](https://www.philschmid.de/evaluate-llm)
 
-3. Optimize
+5. Optimize
    ...
 
-4. Deploy
+6. Deploy
    ...
 
 
