@@ -27,3 +27,5 @@ pypdf
 huggingface-hub
 transformers
 accelerate
+langchain
+sentence-transformers
