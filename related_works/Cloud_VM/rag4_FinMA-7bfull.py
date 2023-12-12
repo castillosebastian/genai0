@@ -19,26 +19,14 @@ from llama_index.llms.llama_utils import (
 )
 
 """## Setup LLM
+work with FinMa
 
-The LlamaCPP llm is highly configurable. Depending on the model being used, you'll want to pass in `messages_to_prompt` 
-and `completion_to_prompt` functions to help format the model inputs.
-Since the default model is llama2-chat, we use the util functions found in 
-[`llama_index.llms.llama_utils`](https://github.com/jerryjliu/llama_index/blob/main/llama_index/llms/llama_utils.py).
-For any kwargs that need to be passed in during initialization, set them in `model_kwargs`. 
-A full list of available model kwargs is available in the [LlamaCPP docs](https://llama-cpp-python.readthedocs.io/en/latest/api-reference/#llama_cpp.llama.Llama.__init__).
-For any kwargs that need to be passed in during inference, you can set them in `generate_kwargs`. 
-See the full list of [generate kwargs here](https://llama-cpp-python.readthedocs.io/en/latest/api-reference/#llama_cpp.llama.Llama.__call__).
-In general, the defaults are a great starting point. The example below shows configuration with all defaults.
-As noted above, we're using the [`llama-2-chat-13b-ggml`](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML) 
-model in this notebook which uses the `ggmlv3` model format. If you are running a version of `llama-cpp-python` 
-greater than `0.1.79`, you can replace the `model_url` below with `"https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q4_0.gguf"`.
-If you're opening this Notebook on colab, you will probably need to install LlamaIndex 🦙.
 """
 
 #!pip install llama-index
 import llama_index
 
-model_url = "https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q4_0.gguf"
+model_url = "https://huggingface.co/ChanceFocus/finma-7b-full/tree/main"
 
 llm = LlamaCPP(
     # You can pass in the URL to a GGML model to download it automatically
@@ -80,10 +68,10 @@ But first, let's change the global tokenizer to match our LLM.
 """
 
 from llama_index import set_global_tokenizer
-from transformers import AutoTokenizer
+from transformers import LlamaTokenizer, LlamaForCausalLM
 
 set_global_tokenizer(
-    AutoTokenizer.from_pretrained("NousResearch/Llama-2-7b-chat-hf").encode
+    LlamaTokenizer.from_pretrained('ChanceFocus/finma-7b-full')
 )
 
 # use Huggingface embeddings
