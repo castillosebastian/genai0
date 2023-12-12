@@ -20,9 +20,9 @@ This are the tools and resources:
 
 ## Tools and resources:
   
-1. Use case **GenAI for chatbot in the Finance Sector**:
+1. Use case: **GenAI for chatbot in the Finance Sector**:
    1. Architecture definitions?
-   2. Use cases? RAG? 
+   2. Specific use cases? eg.RAG 
    3. Data characteristics and format? see: *tables-doc-problem*, 
    4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/)
    
@@ -31,9 +31,9 @@ This are the tools and resources:
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
-   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral)    
+   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961)      
    6. ...
-   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564) 
+   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564)  
 
 3. Adapt and Align (AA):  
    1. AA:Prompt:    
