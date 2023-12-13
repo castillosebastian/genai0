@@ -66,11 +66,15 @@ c. `python3 -m pip install --upgrade pip`
 d. `pip install -r requirements.txt`    
 e. Set interpreter in Project settings: Type and select "Python: Select Interpreter." Choose the interpreter from your .genai0 virtual environment. It should be something like /root/.genai0/bin/python3.     
 
-2. Open-Soruce models tested
+1. Open-Soruce models tested
    1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
    2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
    3. [FinMa-7b-full_part1](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag4_FinMA-7bfull.py)
    4. [Mistral7b-Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag5_Mistral7b_Q4.py)
 
-3. Private Model tested:
+2. Private Model tested:
    1. [gpt-3.5-turbo-truelens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
+
+
+## Bib
+1. [LLMs_in_finencce](https://arxiv.org/abs/2311.10723)
