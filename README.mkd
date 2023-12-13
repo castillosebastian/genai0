@@ -33,7 +33,7 @@ This are the tools and resources:
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
    5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961), [4](https://arxiv.org/pdf/2305.14705.pdf)      
    6. ...
-   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564)  
+   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), many interesting info (e.g.Training Chronicles)  
 
 3. Adapt and Align (AA):  
    1. AA:Prompt:    
@@ -66,9 +66,11 @@ c. `python3 -m pip install --upgrade pip`
 d. `pip install -r requirements.txt`    
 e. Set interpreter in Project settings: Type and select "Python: Select Interpreter." Choose the interpreter from your .genai0 virtual environment. It should be something like /root/.genai0/bin/python3.     
 
-2. Models tested
+2. Open-Soruce models tested
    1. [Zphyr-7b_gen_exploration](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag2_ok_HugFace-zepyyr.py)
    2. [llama-2-chat-13b-ggml_Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag3_ok_LLama2-13b_Q4.py)
    3. [FinMa-7b-full_part1](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag4_FinMA-7bfull.py)
    4. [Mistral7b-Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag5_Mistral7b_Q4.py)
 
+3. Private Model tested:
+   1. [gpt-3.5-turbo-truelens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
