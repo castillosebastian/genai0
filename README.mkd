@@ -24,7 +24,7 @@ This are the tools and resources:
    1. Architecture definitions?
    2. Specific use cases? eg.RAG 
    3. Data characteristics and format? see: *tables-doc-problem*, 
-   4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/)
+   4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
@@ -32,8 +32,10 @@ This are the tools and resources:
    3. [FinGPT](https://huggingface.co/FinGPT)
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
    5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961), [4](https://arxiv.org/pdf/2305.14705.pdf)      
-   6. ...
-   7. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), many interesting info (e.g.Training Chronicles)  
+   6. [finBert](https://huggingface.co/yiyanghkust/finbert-pretrain)
+   7. [FinanceConnect-13b](https://huggingface.co/ceadar-ie/FinanceConnect-13B)
+   8. ...
+   9. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), many interesting info (e.g.Training Chronicles)  
 
 3. Adapt and Align (AA):  
    1. AA:Prompt:    
@@ -41,6 +43,10 @@ This are the tools and resources:
    2. AA:FineTune:   
       1. [AdaptLLMstoDomains](https://huggingface.co/AdaptLLM/finance-LLM)
       2. [ft_llama2_LoRA](https://arxiv.org/abs/2308.13032): summarization and NER.
+      3. ...
+      - Datasets:
+        - [FinTalk19k](https://huggingface.co/datasets/ceadar-ie/FinTalk-19k)
+        - [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca)
    3. AA: Aling and HF    
       1. [Pearl](https://pearlagent.github.io/)
 
@@ -73,8 +79,11 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
    4. [Mistral7b-Q4](https://github.com/castillosebastian/genai0/blob/main/related_works/Cloud_VM/rag5_Mistral7b_Q4.py)
 
 2. Private Model tested:
-   1. [gpt-3.5-turbo-truelens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
+   1. [gpt-3.5-turbo-trulens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
 
+## Api
+1. [FMP](https://site.financialmodelingprep.com/developer/docs?ref=mlq.ai#Company-Financial-Statements): financial statements, historical-data, etc
 
-## Bib
+## Bib and ref
 1. [LLMs_in_finencce](https://arxiv.org/abs/2311.10723)
+   
