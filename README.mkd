@@ -36,7 +36,7 @@ This are the tools and resources:
    7. [FinanceConnect-13b](https://huggingface.co/ceadar-ie/FinanceConnect-13B)
    8. [LLM360](https://www.llm360.ai/)
    9. ...
-   10. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), many interesting info (e.g.Training Chronicles)  
+   10. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), interesting info (e.g.Training Chronicles)  
 
 3. Adapt and Align (AA):  
    1. AA:Prompt:    
