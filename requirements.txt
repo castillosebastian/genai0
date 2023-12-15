@@ -30,3 +30,4 @@ accelerate
 langchain
 sentence-transformers
 sec-edgar-downloader
+langchain
