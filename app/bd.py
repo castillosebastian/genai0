@@ -1,33 +1,29 @@
 import logging
 import sys
-import requests
 import os
-from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
 import torch
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
 from llama_index.llms import LlamaCPP
 from llama_index.llms.llama_utils import messages_to_prompt, completion_to_prompt
+from llama_index.embeddings import LangchainEmbedding
 import langchain
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from llama_index import ServiceContext
-from llama_index.embeddings import LangchainEmbedding
-import sentence_transformers
+
+from llama_index.callbacks import (
+    CallbackManager,
+    LlamaDebugHandler
+)
 
 # Start script
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-dirpath = 'related_works/Cloud_VM/'
-filename = dirpath + 'ey.pdf'
-url = 'https://assets.ey.com/content/dam/ey-sites/ey-com/nl_nl/topics/jaarverslag/downloads-pdfs/2022-2023/ey-nl-financial-statements-2023-en.pdf'
-
-if not os.path.exists(filename):
-    print(f"Downloading {filename} from {url}...")    
-    response = requests.get(url)
-    with open(dirpath + 'ey.pdf', 'wb') as f:
-        f.write(response.content)
+llama_debug = LlamaDebugHandler(print_trace_on_end=True)
+callback_manager = CallbackManager([llama_debug])
 
 documents = SimpleDirectoryReader(
-    input_files=[filename]
+    input_dir='bd',
+    required_exts=[".pdf"]
 ).load_data()
 
 llm = LlamaCPP(
@@ -57,14 +53,13 @@ embed_model = LangchainEmbedding(
 service_context = ServiceContext.from_defaults(
     chunk_size=256,
     llm=llm,
-    embed_model=embed_model
+    embed_model=embed_model,
+    callback_manager=callback_manager
 )
 
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 
 query_engine = index.as_query_engine()
-response = query_engine.query("Explain to me the Statement of profit or loss of Ernst & Young Nederland") # 30G RAM y full 24 vCPU
-print(response)
 
 # conversation-like
 while True:
