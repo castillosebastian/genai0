@@ -48,6 +48,8 @@ This are the tools and resources:
       - Datasets:
         - [FinTalk19k](https://huggingface.co/datasets/ceadar-ie/FinTalk-19k)
         - [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca)
+        - [EDGAR-CORPUS](https://huggingface.co/datasets/eloukas/edgar-corpus)
+        - [FinancialReports_HuggF](https://huggingface.co/datasets/JanosAudran/financial-reports-sec)
    3. AA: Aling and HF    
       1. [Pearl](https://pearlagent.github.io/)
 
@@ -82,8 +84,9 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 2. Private Model tested:
    1. [gpt-3.5-turbo-trulens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
 
-## Api
+## Api and +
 1. [FMP](https://site.financialmodelingprep.com/developer/docs?ref=mlq.ai#Company-Financial-Statements): financial statements, historical-data, etc
+2. [SecFillingsDownloader](https://github.com/jadchaar/sec-edgar-downloader)
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
