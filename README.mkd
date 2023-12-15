@@ -88,6 +88,9 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 1. [FMP](https://site.financialmodelingprep.com/developer/docs?ref=mlq.ai#Company-Financial-Statements): financial statements, historical-data, etc
 2. [SecFillingsDownloader](https://github.com/jadchaar/sec-edgar-downloader)
 
+## VectorDB
+1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html)
+
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
    
