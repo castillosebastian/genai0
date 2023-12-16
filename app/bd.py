@@ -59,6 +59,17 @@ service_context = ServiceContext.from_defaults(
 
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 
+# Persist index to disk
+index.storage_context.persist("10K-AAPL_AMZN_MRNA_TSLA_index")
+# from llama_index import StorageContext, load_index_from_storage
+# Rebuild storage context
+# storage_context = StorageContext.from_defaults(persist_dir="naval_index")
+# Load index from the storage context
+# new_index = load_index_from_storage(storage_context)
+# new_query_engine = new_index.as_query_engine()
+# response = new_query_engine.query("who is this text about?")
+# print(response)
+
 query_engine = index.as_query_engine()
 
 # conversation-like
