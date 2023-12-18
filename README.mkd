@@ -20,11 +20,12 @@ This are the tools and resources:
 
 ## Tools and resources:
   
-1. Use case: **GenAI for chatbot in the Finance Sector**:
-   1. Architecture definitions?
-   2. Specific use cases? eg.RAG 
-   3. Data characteristics and format? see: *tables-doc-problem*, 
-   4. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
+1. Use case: **GenAI for chatbot in the Finance Sector with RAG**:   
+   1. As a linguistic object, financial statements are characterized by a unique blend of features. They consist of formal, technical language with a heavy reliance on specialized financial and accounting terminology. The structure is highly standardized and regulated, ensuring a consistent format across various documents. The language is predominantly objective, focusing on quantitative data and factual information. It's also legally cautious, often including disclaimers and cautionary statements. Narrative elements are present, especially in sections like Management’s Discussion and Analysis (MD&A), providing qualitative insights. The use of passive voice is common, emphasizing actions and results over the entities performing them. Additionally, these documents feature a mix of concise yet comprehensive descriptions, ensuring clarity and specificity. Speculative language is used carefully in forward-looking statements, indicating projections and expectations. Companies may also be cautious in revealing sensitive data that could advantage competitors. Therefore, while financial statements provide key financial data, the presentation is often calibrated to serve both transparency and corporate strategy. 
+   2. Data characteristics and format? Rich format documents!
+      1. Tables: [Langchain_1](https://blog.langchain.dev/benchmarking-rag-on-tables/), Microsoft [tabletransformer](https://github.com/microsoft/table-transformer)  
+   3. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
+   4. Solutions: [SECInsights](https://github.com/run-llama/sec-insights)
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
@@ -52,11 +53,12 @@ This are the tools and resources:
         - [FinancialReports_HuggF](https://huggingface.co/datasets/JanosAudran/financial-reports-sec)
    3. AA: Aling and HF    
       1. [Pearl](https://pearlagent.github.io/)
+      2. [DPO](https://arxiv.org/pdf/2305.18290.pdf)
 
 4. Evaluation
    1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
    2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
-   3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm)
+   3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm), or [Langchain](https://docs.smith.langchain.com/evaluation/evaluator-implementations?ref=blog.langchain.dev#correctness-qa-evaluation)
 
 5. Optimize
    ...
@@ -84,12 +86,26 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 2. Private Model tested:
    1. [gpt-3.5-turbo-trulens-eval](https://github.com/castillosebastian/genai0/blob/main/related_works/RAG_DeeplearningAI/L1-Advanced_RAG_Pipeline.ipynb)
 
+## Querying Strategies and VectorDB
+1. QS:
+   1. Basics
+   2. Advaced
+      1. SubQuestionQueryEngine for complex questions
+      2. Small-to-big retrieval for improved precision
+      3. Metadata filtering, also for improved precision
+      4. Hybrid search including traditional search engine techniques
+      5. Recursive Retrieval for complex documents: [RecursiveRetriver](https://llamahub.ai/l/llama_packs-dense_x_retrieval?from=llama_packs)
+      6. Text to SQL
+      7. Multi-document agents that can combine all of these techniques
+      8. Ensembles: [EnsembleRetriever](https://python.langchain.com/docs/modules/data_connection/retrievers/ensemble?ref=blog.langchain.dev)
+2. VDB
+   1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html)
+
+
 ## Api and +
 1. [FMP](https://site.financialmodelingprep.com/developer/docs?ref=mlq.ai#Company-Financial-Statements): financial statements, historical-data, etc
 2. [SecFillingsDownloader](https://github.com/jadchaar/sec-edgar-downloader)
-
-## VectorDB
-1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html)
+3. [Polygon](https://polygon.io/stocks?utm_term=polygon%20io&utm_campaign=Brand+-+ALL+(Conv+Value+tROAS)&utm_source=adwords&utm_medium=ppc&hsa_acc=4299129556&hsa_cam=14536485495&hsa_grp=132004734661&hsa_ad=614838466716&hsa_src=g&hsa_tgt=aud-1438727183434:kwd-994300255560&hsa_kw=polygon%20io&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiA-P-rBhBEEiwAQEXhH2_6W2Y2rhx8W6-T9v6UseLYYpMfBHCbXw_ayo5-cWpfUCHOoMQFXRoCGVIQAvD_BwE )
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
