@@ -31,3 +31,11 @@ langchain
 sentence-transformers
 sec-edgar-downloader
 langchain
+unstructured
+pydantic 
+lxml 
+langchainhub
+python-poppler
+pytesseract
+bitsandbytes
+python-dotenv

@@ -27,7 +27,10 @@ This are the tools and resources:
       2. Stream_response: [langchain_1](https://github.com/pinecone-io/examples/blob/master/learn/generation/langchain/handbook/09-langchain-streaming/09-langchain-streaming.ipynb), [langchain](https://medium.com/databutton/stream-langchain-ai-abstractions-and-responses-in-your-web-app-langchain-tools-in-action-e37907779437)
       3. Multimodality: [Langchain](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_multi_modal_RAG_LLaMA2.ipynb?ref=blog.langchain.dev)  
    3. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
-   4. Solutions: [SECInsights](https://github.com/run-llama/sec-insights)
+   4. Solutions (well, almost): 
+      1. [SECInsights](https://github.com/run-llama/sec-insights)
+      2. [OpenAI-RAG](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant)
+      3. [Azure-GPT-RAG](https://github.com/Azure/GPT-RAG/tree/main) - [youtube:globant!](https://www.youtube.com/watch?v=ICsf4yirieA)
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
