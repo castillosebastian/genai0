@@ -115,4 +115,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
-   
+
+## Toy App
+
+![RAGbot_App](image/RAGbot.png)
