@@ -111,6 +111,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 1. [FMP](https://site.financialmodelingprep.com/developer/docs?ref=mlq.ai#Company-Financial-Statements): financial statements, historical-data, etc
 2. [SecFillingsDownloader](https://github.com/jadchaar/sec-edgar-downloader)
 3. [Polygon](https://polygon.io/stocks?utm_term=polygon%20io&utm_campaign=Brand+-+ALL+(Conv+Value+tROAS)&utm_source=adwords&utm_medium=ppc&hsa_acc=4299129556&hsa_cam=14536485495&hsa_grp=132004734661&hsa_ad=614838466716&hsa_src=g&hsa_tgt=aud-1438727183434:kwd-994300255560&hsa_kw=polygon%20io&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiA-P-rBhBEEiwAQEXhH2_6W2Y2rhx8W6-T9v6UseLYYpMfBHCbXw_ayo5-cWpfUCHOoMQFXRoCGVIQAvD_BwE )
+4. [Diffbot-API](https://www.diffbot.com/)
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
