@@ -6,17 +6,16 @@ from langchain.chat_models import AzureChatOpenAI
 from langchain.schema import HumanMessage
 from exp.azure_openai_conn import llm, embeddings
 from dotenv import load_dotenv
-
-
+# environ
 load_dotenv()
 
 
+# Models
 open_ai_embeddings = embeddings()
 model = llm()
-message = HumanMessage(
-    content="Translate this sentence from English to French. I love programming."
-)
 
+# Simple test
+message = HumanMessage(content="Translate this sentence from English to French. I love programming.")
 model([message])
 
 

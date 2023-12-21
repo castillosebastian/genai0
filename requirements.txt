@@ -39,3 +39,4 @@ python-poppler
 pytesseract
 bitsandbytes
 python-dotenv
+azure-ai-formrecognizer
