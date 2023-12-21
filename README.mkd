@@ -31,6 +31,8 @@ This are the tools and resources:
       1. [SECInsights](https://github.com/run-llama/sec-insights)
       2. [OpenAI-RAG](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant)
       3. [Azure-GPT-RAG](https://github.com/Azure/GPT-RAG/tree/main) - [youtube:globant!](https://www.youtube.com/watch?v=ICsf4yirieA)
+      4. [OpenAI-Langchain-Redis:FinTemplate](https://github.com/langchain-ai/langchain/tree/master/templates/rag-redis)
+      5. [OpenAI-Agents-Finacial](https://medium.com/gitconnected/mastering-openai-assistants-api-building-an-ai-financial-analyst-to-forecast-stock-trend-17a45c77607a), [colab](https://github.com/castillosebastian/genai0/blob/014a9db7fd25ac9d11e12f1bb94659c754341d72/related_works/Cloud_VM/Financial_Statement_Analyst_Using_OpenAIAssistantsAPI_v1.ipynb#L879)
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
@@ -63,7 +65,8 @@ This are the tools and resources:
 4. Evaluation
    1. [Promptbench](https://promptbench.readthedocs.io/en/latest/examples/basic.html)
    2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
-   3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm), or [Langchain](https://docs.smith.langchain.com/evaluation/evaluator-implementations?ref=blog.langchain.dev#correctness-qa-evaluation), or [Langchain](https://github.com/langchain-ai/langsmith-cookbook/blob/main/testing-examples/qa-correctness/qa-correctness.ipynb)
+   3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm), or [Langchain](https://docs.smith.langchain.com/evaluation/evaluator-implementations?ref=blog.langchain.dev#correctness-qa-evaluation), or [Langchain](https://github.com/langchain-ai/langsmith-cookbook/blob/main/testing-examples/qa-correctness/qa-correctness.ipynb)    
+   4. [Promptfoo]([https://github.com/promptfoo/promptfoo/blob/main/README.md)
 
 5. Optimize
    ...
@@ -103,8 +106,8 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
       6. Text to SQL
       7. Multi-document agents that can combine all of these techniques
       8. Ensembles: [EnsembleRetriever](https://python.langchain.com/docs/modules/data_connection/retrievers/ensemble?ref=blog.langchain.dev)
-2. VDB
-   1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html)
+2. VDB (for performace comparison: [vectorview](https://benchmark.vectorview.ai/vectordbs.html), [ANN-Benchmarks](https://ann-benchmarks.com/index.html))
+   1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html), [performance_evaluation](https://qdrant.tech/benchmarks/)
 
 
 ## Api and +

@@ -1,0 +1,191 @@
+IndexError                                Traceback (most recent call last)
+Cell In[2], line 22
+     14 # Ref
+     15 # intall tesseract!
+     16 # https://python.langchain.com/docs/integrations/providers/unstructured
+   (...)
+     19 # Process PDF----------------------------------------------------------------------------
+     20 # See: https://unstructured-io.github.io/unstructured/core/partition.html#partition-pdf
+     21 start_time_partitionpdf = time.perf_counter()
+---> 22 raw_pdf_elements = partition_pdf(    
+     23     filename= '/home/sebacastillo/genai0/bd/Tesla_2022.pdf',
+     24     # Unstructured first finds embedded image blocks
+     25     extract_images_in_pdf=False,
+     26     # Use layout model (YOLOX) to get bounding boxes (for tables) and find titles
+     27     # Titles are any sub-section of the document
+     28     infer_table_structure=True,
+     29     # Post processing to aggregate text once we have the title
+     30     chunking_strategy="by_title",
+     31     # Chunking params to aggregate text blocks
+     32     # Attempt to create a new chunk 3800 chars
+     33     # Attempt to keep chunks > 2000 chars
+     34     max_characters=4000,
+     35     new_after_n_chars=3800,
+     36     combine_text_under_n_chars=2000,
+     37     image_output_dir_path='bd/image',
+     38 )
+     39 end_time_partitionpdf = time.perf_counter()
+     40 duration_partition_pdf = end_time_partitionpdf - start_time_partitionpdf
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/documents/elements.py:514, in process_metadata.<locals>.decorator.<locals>.wrapper(*args, **kwargs)
+    512 @functools.wraps(func)
+    513 def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> List[Element]:
+--> 514     elements = func(*args, **kwargs)
+    515     sig = inspect.signature(func)
+    516     params: Dict[str, Any] = dict(**dict(zip(sig.parameters, args)), **kwargs)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/file_utils/filetype.py:591, in add_filetype.<locals>.decorator.<locals>.wrapper(*args, **kwargs)
+    589 @functools.wraps(func)
+    590 def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> List[Element]:
+--> 591     elements = func(*args, **kwargs)
+    592     sig = inspect.signature(func)
+    593     params: Dict[str, Any] = dict(**dict(zip(sig.parameters, args)), **kwargs)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/file_utils/filetype.py:546, in add_metadata.<locals>.wrapper(*args, **kwargs)
+    544 @functools.wraps(func)
+    545 def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> List[Element]:
+--> 546     elements = func(*args, **kwargs)
+    547     sig = inspect.signature(func)
+    548     params: Dict[str, Any] = dict(**dict(zip(sig.parameters, args)), **kwargs)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/chunking/__init__.py:52, in add_chunking_strategy.<locals>.decorator.<locals>.wrapper(*args, **kwargs)
+     50 @functools.wraps(func)
+     51 def wrapper(*args: _P.args, **kwargs: _P.kwargs) -> List[Element]:
+---> 52     elements = func(*args, **kwargs)
+     53     sig = inspect.signature(func)
+     54     params: Dict[str, Any] = dict(**dict(zip(sig.parameters, args)), **kwargs)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf.py:183, in partition_pdf(filename, file, include_page_breaks, strategy, infer_table_structure, ocr_languages, languages, include_metadata, metadata_filename, metadata_last_modified, chunking_strategy, links, extract_images_in_pdf, extract_element_types, image_output_dir_path, **kwargs)
+    179 exactly_one(filename=filename, file=file)
+    181 languages = check_languages(languages, ocr_languages)
+--> 183 return partition_pdf_or_image(
+    184     filename=filename,
+    185     file=file,
+    186     include_page_breaks=include_page_breaks,
+    187     strategy=strategy,
+    188     infer_table_structure=infer_table_structure,
+    189     languages=languages,
+    190     metadata_last_modified=metadata_last_modified,
+    191     extract_images_in_pdf=extract_images_in_pdf,
+    192     extract_element_types=extract_element_types,
+    193     image_output_dir_path=image_output_dir_path,
+    194     **kwargs,
+    195 )
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf.py:480, in partition_pdf_or_image(filename, file, is_image, include_page_breaks, strategy, infer_table_structure, ocr_languages, languages, metadata_last_modified, extract_images_in_pdf, extract_element_types, image_output_dir_path, **kwargs)
+    478     with warnings.catch_warnings():
+    479         warnings.simplefilter("ignore")
+--> 480         elements = _partition_pdf_or_image_local(
+    481             filename=filename,
+    482             file=spooled_to_bytes_io_if_needed(file),
+    483             is_image=is_image,
+    484             infer_table_structure=infer_table_structure,
+    485             include_page_breaks=include_page_breaks,
+    486             languages=languages,
+    487             metadata_last_modified=metadata_last_modified or last_modification_date,
+    488             pdf_text_extractable=pdf_text_extractable,
+    489             extract_images_in_pdf=extract_images_in_pdf,
+    490             extract_element_types=extract_element_types,
+    491             image_output_dir_path=image_output_dir_path,
+    492             **kwargs,
+    493         )
+    494         out_elements = _process_uncategorized_text_elements(elements)
+    496 elif strategy == PartitionStrategy.FAST:
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/utils.py:214, in requires_dependencies.<locals>.decorator.<locals>.wrapper(*args, **kwargs)
+    205 if len(missing_deps) > 0:
+    206     raise ImportError(
+    207         f"Following dependencies are missing: {', '.join(missing_deps)}. "
+    208         + (
+   (...)
+    212         ),
+    213     )
+--> 214 return func(*args, **kwargs)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf.py:298, in _partition_pdf_or_image_local(filename, file, is_image, infer_table_structure, include_page_breaks, languages, ocr_mode, model_name, metadata_last_modified, pdf_text_extractable, extract_images_in_pdf, extract_element_types, image_output_dir_path, pdf_image_dpi, **kwargs)
+    296         final_document_layout = merged_document_layout
+    297     else:
+--> 298         final_document_layout = process_file_with_ocr(
+    299             filename,
+    300             merged_document_layout,
+    301             is_image=is_image,
+    302             infer_table_structure=infer_table_structure,
+    303             ocr_languages=ocr_languages,
+    304             ocr_mode=ocr_mode,
+    305             pdf_image_dpi=pdf_image_dpi,
+    306         )
+    307 else:
+    308     inferred_document_layout = process_data_with_model(
+    309         file,
+    310         is_image=is_image,
+    311         model_name=model_name,
+    312         pdf_image_dpi=pdf_image_dpi,
+    313     )
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf_image/ocr.py:171, in process_file_with_ocr(filename, out_layout, is_image, infer_table_structure, ocr_languages, ocr_mode, pdf_image_dpi)
+    169 except Exception as e:
+    170     if os.path.isdir(filename) or os.path.isfile(filename):
+--> 171         raise e
+    172     else:
+    173         raise FileNotFoundError(f'File "{filename}" not found!') from e
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf_image/ocr.py:160, in process_file_with_ocr(filename, out_layout, is_image, infer_table_structure, ocr_languages, ocr_mode, pdf_image_dpi)
+    158 for i, image_path in enumerate(image_paths):
+    159     with PILImage.open(image_path) as image:
+--> 160         merged_page_layout = supplement_page_layout_with_ocr(
+    161             out_layout.pages[i],
+    162             image,
+    163             infer_table_structure=infer_table_structure,
+    164             ocr_languages=ocr_languages,
+    165             ocr_mode=ocr_mode,
+    166         )
+    167         merged_page_layouts.append(merged_page_layout)
+    168 return DocumentLayout.from_pages(merged_page_layouts)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf_image/ocr.py:237, in supplement_page_layout_with_ocr(page_layout, image, infer_table_structure, ocr_languages, ocr_mode)
+    234     if tables.tables_agent is None:
+    235         raise RuntimeError("Unable to load table extraction agent.")
+--> 237     page_layout.elements[:] = supplement_element_with_table_extraction(
+    238         elements=cast(List[LayoutElement], page_layout.elements),
+    239         image=image,
+    240         tables_agent=tables.tables_agent,
+    241         ocr_languages=ocr_languages,
+    242         ocr_agent=ocr_agent,
+    243     )
+    245 return page_layout
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured/partition/pdf_image/ocr.py:274, in supplement_element_with_table_extraction(elements, image, tables_agent, ocr_languages, ocr_agent)
+    263         cropped_image = image.crop(
+    264             (
+    265                 padded_element.bbox.x1,
+   (...)
+    269             ),
+    270         )
+    271         table_tokens = get_table_tokens(
+    272             image=cropped_image, ocr_languages=ocr_languages, ocr_agent=ocr_agent
+    273         )
+--> 274         element.text_as_html = tables_agent.predict(cropped_image, ocr_tokens=table_tokens)
+    275 return elements
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured_inference/models/tables.py:53, in UnstructuredTableTransformerModel.predict(self, x, ocr_tokens)
+     37 """Predict table structure deferring to run_prediction with ocr tokens
+     38 
+     39 Note:
+   (...)
+     50 FIXME: refactor token data into a dataclass so we have clear expectations of the fields
+     51 """
+     52 super().predict(x)
+---> 53 return self.run_prediction(x, ocr_tokens=ocr_tokens)
+
+File ~/.genai0/lib/python3.9/site-packages/unstructured_inference/models/tables.py:190, in UnstructuredTableTransformerModel.run_prediction(self, x, pad_for_structure_detection, ocr_tokens, result_format)
+    184     logger.warning(
+    185         "Table OCR from get_tokens method will be deprecated. "
+    186         "In the future the OCR tokens are expected to be passed in.",
+    187     )
+    188     ocr_tokens = self.get_tokens(x=x)
+--> 190 prediction = recognize(outputs_structure, x, tokens=ocr_tokens)[0]
+    191 if result_format == "html":
+    192     # Convert cells to HTML
+    193     prediction = cells_to_html(prediction) or ""
+
+IndexError: list index out of range
