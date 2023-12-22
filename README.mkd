@@ -28,11 +28,12 @@ This are the tools and resources:
       3. Multimodality: [Langchain](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_multi_modal_RAG_LLaMA2.ipynb?ref=blog.langchain.dev), [RAG-table-image](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_and_multi_modal_RAG.ipynb?ref=blog.langchain.dev),   
    3. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
    4. Solutions (well, almost): 
-      1. [SECInsights](https://github.com/run-llama/sec-insights)
-      2. [OpenAI-RAG](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant)
-      3. [Azure-GPT-RAG](https://github.com/Azure/GPT-RAG/tree/main) - [youtube:globant!](https://www.youtube.com/watch?v=ICsf4yirieA)
-      4. [OpenAI-Langchain-Redis:FinTemplate](https://github.com/langchain-ai/langchain/tree/master/templates/rag-redis)
-      5. [OpenAI-Agents-Finacial](https://medium.com/gitconnected/mastering-openai-assistants-api-building-an-ai-financial-analyst-to-forecast-stock-trend-17a45c77607a), [colab](https://github.com/castillosebastian/genai0/blob/014a9db7fd25ac9d11e12f1bb94659c754341d72/related_works/Cloud_VM/Financial_Statement_Analyst_Using_OpenAIAssistantsAPI_v1.ipynb#L879)
+      1. [Azure-AISearch-OpenAI](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/README.md)
+      2. [SECInsights](https://github.com/run-llama/sec-insights)
+      3. [OpenAI-RAG](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant)
+      4. [Azure-GPT-RAG](https://github.com/Azure/GPT-RAG/tree/main) - [youtube:globant!](https://www.youtube.com/watch?v=ICsf4yirieA)
+      5. [OpenAI-Langchain-Redis:FinTemplate](https://github.com/langchain-ai/langchain/tree/master/templates/rag-redis)
+      6. [OpenAI-Agents-Finacial](https://medium.com/gitconnected/mastering-openai-assistants-api-building-an-ai-financial-analyst-to-forecast-stock-trend-17a45c77607a), [colab](https://github.com/castillosebastian/genai0/blob/014a9db7fd25ac9d11e12f1bb94659c754341d72/related_works/Cloud_VM/Financial_Statement_Analyst_Using_OpenAIAssistantsAPI_v1.ipynb#L879)
    
 2. Existing models:
    1. [LLama2-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)  
@@ -101,13 +102,15 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
       1. SubQuestionQueryEngine for complex questions
       2. Small-to-big retrieval for improved precision
       3. Metadata filtering, also for improved precision
-      4. Hybrid search including traditional search engine techniques
+      4. Hybrid search including traditional search engine techniques: [IMPORTATN](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-cognitive-search-outperforming-vector-search-with-hybrid/ba-p/3929167)
       5. Recursive Retrieval for complex documents: [RecursiveRetriver](https://llamahub.ai/l/llama_packs-dense_x_retrieval?from=llama_packs)
       6. Text to SQL
       7. Multi-document agents that can combine all of these techniques
       8. Ensembles: [EnsembleRetriever](https://python.langchain.com/docs/modules/data_connection/retrievers/ensemble?ref=blog.langchain.dev)
 2. VDB (for performace comparison: [vectorview](https://benchmark.vectorview.ai/vectordbs.html), [ANN-Benchmarks](https://ann-benchmarks.com/index.html))
    1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html), [performance_evaluation](https://qdrant.tech/benchmarks/)
+3. DB configuration:
+   1. [RAG in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview), [video](https://ignite.microsoft.com/en-US/sessions/18618ca9-0e4d-4f9d-9a28-0bc3ef5cf54e?source=sessions)
 
 
 ## Api and +
@@ -122,3 +125,20 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 ## Toy App
 
 ![RAGbot_App](image/RAGbot.png)
+
+# Demo APP
+
+1. [Demo APP Azure-AISearch-OpenAI](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/README.md),[1](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview), [2](https://learn.microsoft.com/en-us/azure/developer/python/get-started-app-chat-template?tabs=github-codespaces),
+
+2. **VectorDB**
+- [document-intelligence-layout](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-layout?view=doc-intel-4.0.0)
+- [indexes](https://learn.microsoft.com/en-us/azure/search/search-what-is-an-index)
+  
+3. **Retriever**
+
+![search-strategy-comparison](image/Retriever-search-stragegi-comparison.png)
+
+- [hybrid+reranking](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-cognitive-search-outperforming-vector-search-with-hybrid/ba-p/3929167)
+- [vector_search](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)
+
+1. **Generation**
