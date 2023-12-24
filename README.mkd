@@ -24,6 +24,8 @@ This are the tools and resources:
    1. As a linguistic object, financial statements are characterized by a unique blend of features. They consist of formal, technical language with a heavy reliance on specialized financial and accounting terminology. The structure is highly standardized and regulated, ensuring a consistent format across various documents. The language is predominantly objective, focusing on quantitative data and factual information. It's also legally cautious, often including disclaimers and cautionary statements. Narrative elements are present, especially in sections like Management’s Discussion and Analysis (MD&A), providing qualitative insights. The use of passive voice is common, emphasizing actions and results over the entities performing them. Additionally, these documents feature a mix of concise yet comprehensive descriptions, ensuring clarity and specificity. Speculative language is used carefully in forward-looking statements, indicating projections and expectations. Companies may also be cautious in revealing sensitive data that could advantage competitors. Therefore, while financial statements provide key financial data, the presentation is often calibrated to serve both transparency and corporate strategy. 
    2. Data characteristics and format? Rich format documents!
       1. Tables: [Langchain_1](https://blog.langchain.dev/benchmarking-rag-on-tables/), Microsoft [tabletransformer](https://github.com/microsoft/table-transformer), [RAG-Table](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_Structured_RAG.ipynb?ref=blog.langchain.dev), 
+         1. Table_reasoning [RegHNT](https://arxiv.org/pdf/2209.07692.pdf), [github](https://github.com/castillosebastian/RegHNT)
+         2. Table_reasoning [UniRPG](https://aclanthology.org/2022.emnlp-main.508.pdf), [github](https://github.com/phddamuge/UniRPG)
       2. Stream_response: [langchain_1](https://github.com/pinecone-io/examples/blob/master/learn/generation/langchain/handbook/09-langchain-streaming/09-langchain-streaming.ipynb), [langchain](https://medium.com/databutton/stream-langchain-ai-abstractions-and-responses-in-your-web-app-langchain-tools-in-action-e37907779437)
       3. Multimodality: [Langchain](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_multi_modal_RAG_LLaMA2.ipynb?ref=blog.langchain.dev), [RAG-table-image](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_and_multi_modal_RAG.ipynb?ref=blog.langchain.dev),   
    3. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
@@ -68,11 +70,17 @@ This are the tools and resources:
    2. [TrueLens](https://www.trulens.org/), [2](https://blog.llamaindex.ai/build-and-evaluate-llm-apps-with-llamaindex-and-trulens-6749e030d83c)
    3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm), or [Langchain](https://docs.smith.langchain.com/evaluation/evaluator-implementations?ref=blog.langchain.dev#correctness-qa-evaluation), or [Langchain](https://github.com/langchain-ai/langsmith-cookbook/blob/main/testing-examples/qa-correctness/qa-correctness.ipynb)    
    4. [Promptfoo]([https://github.com/promptfoo/promptfoo/blob/main/README.md)
+5. Benchmarks
+   1. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
+   2. [FinQA](https://aclanthology.org/2021.emnlp-main.300/), [github](https://github.com/castillosebastian/FinQA)
+   3. [TAT-QA](https://aclanthology.org/2021.acl-long.254.pdf), [github](https://nextplusplus.github.io/TAT-QA/)
+   4. [ConFirm-paper](https://arxiv.org/abs/2310.13001), [github](https://github.com/WilliamGazeley/ConFIRM)
+   5. [FLANG-FLUE](https://aclanthology.org/2022.emnlp-main.148.pdf), [huggingface](https://huggingface.co/datasets/SALT-NLP/FLUE-FiQA),
 
-5. Optimize
+6. Optimize
    ...
 
-6. Deploy
+7. Deploy
    ...
 
 
