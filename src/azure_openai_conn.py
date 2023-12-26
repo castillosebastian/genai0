@@ -10,7 +10,7 @@ load_dotenv()
 # os.environ["OPENAI_API_KEY"] #= os.getenv('OPENAI_API_KEY')
 # os.environ["AZURE_OPENAI_ENDPOINT"] #= os.getenv('AZURE_OPENAI_ENDPOINT')
 
-def embeddings():
+def OpenAIembeddings():
     open_ai_embeddings = AzureOpenAIEmbeddings(
         azure_deployment="text-embedding-ada-002",
         openai_api_version="2023-05-15",

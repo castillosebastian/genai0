@@ -16,7 +16,10 @@ In this context, we divided the content of our notes and testing following the G
 5. Optimize
 6. Deploy
 
-This are the tools and resources: 
+## RAG-Paradigms
+
+![Gao et all, 2023](image/RAG-Paradigms.png)
+[arxiv](http://arxiv.org/abs/2312.10997)
 
 ## Tools and resources:
   
@@ -74,14 +77,14 @@ This are the tools and resources:
    1. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
    2. [FinQA](https://aclanthology.org/2021.emnlp-main.300/), [github](https://github.com/castillosebastian/FinQA)
    3. [TAT-QA](https://aclanthology.org/2021.acl-long.254.pdf), [github](https://nextplusplus.github.io/TAT-QA/)
-   4. [ConFirm-paper](https://arxiv.org/abs/2310.13001), [github](https://github.com/WilliamGazeley/ConFIRM)
+   4. [ConFIRM](https://arxiv.org/abs/2310.13001), [github](https://github.com/WilliamGazeley/ConFIRM)
    5. [FLANG-FLUE](https://aclanthology.org/2022.emnlp-main.148.pdf), [huggingface](https://huggingface.co/datasets/SALT-NLP/FLUE-FiQA),
 
 6. Optimize
-   ...
+   1. [FineTunning_OpeAI](https://platform.openai.com/docs/guides/fine-tuning/fine-tuning-examples)
 
 7. Deploy
-   ...
+   1. [Azure-AISearch-OpenAI](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/README.md), for creating dataset see [ConFIRM](https://arxiv.org/abs/2310.13001),[github](https://github.com/WilliamGazeley/ConFIRM)
 
 
 ## Scripts Tested
@@ -129,6 +132,8 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
+2. [RAG-Survey](https://arxiv.org/abs/2312.10997v1?utm_source=substack&utm_medium=email)
+3. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
 
 ## Toy App
 
