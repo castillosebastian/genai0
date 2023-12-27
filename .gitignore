@@ -1,4 +1,8 @@
 /archivo
+/data/financebench/financebench.zip
+/data/financebench/collection
+/data/financebench/meta.json
+/data/financebench/.lock
 .genai0
 .env
 set_env.py
