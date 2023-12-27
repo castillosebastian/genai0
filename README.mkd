@@ -1,8 +1,6 @@
 # GenAI Project Template and Notes (periodically updated)
 
-## Inspired by [Deeplearning.ai](https://www.deeplearning.ai/courses/generative-ai-with-llms/)
-
-This repository maintains a limited selection of resources and articles related to the field of GenAI and its application to chatbots (with a focus on RAG-type architectures). The general purpose is to test the solutions proposed in this field using open source LLMs. Any contribution is welcome.    
+This repository maintains a limited selection of code, resources and articles related to the field of GenAI and its application to chatbots (with a focus on RAG-type architectures). The general purpose is to test the solutions proposed in this field using LLMs. Any contribution is welcome.    
 
 In this context, we divided the content of our notes and testing following the GenAI development applications model proposed in the course dictated by Deeplearning.ai. The model or template has 6 steps: 
 
