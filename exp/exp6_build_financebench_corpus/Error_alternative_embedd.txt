@@ -1,0 +1,18 @@
+#from langchain.embeddings import HuggingFaceEmbeddings #to get embeddings
+
+# embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", #https://umar-igan.medium.com/langchain-and-qdrant-to-create-information-agent-using-open-source-llm-a07c57e9c063
+#                                        model_kwargs={'device': 'cpu'})
+
+#embedding_model = Embedding(model_name="BAAI/bge-base-en", max_length=512) # https://qdrant.tech/articles/fastembed/
+
+-----------------------
+
+
+# todo: smarter splitter
+# https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/scripts/prepdocslib/textsplitter.py
+# text_splitter = RecursiveCharacterTextSplitter(
+#         chunk_size=1500, chunk_overlap=100, add_start_index=True # https://github.com/langchain-ai/langchain/blob/master/templates/rag-redis/ingest.py
+#     )
+    
+# chunked_documents = text_splitter.split_documents(documents)    
+# print(f'Documents chunks: {chunked_documents}')    

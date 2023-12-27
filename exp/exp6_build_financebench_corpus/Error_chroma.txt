@@ -1,0 +1,12 @@
+
+File ~/.genai0/lib/python3.9/site-packages/chromadb/db/mixins/embeddings_queue.py:172, in SqlEmbeddingsQueue.submit_embeddings(self, topic_name, embeddings)
+    169 # The returning clause does not guarantee order, so we need to do reorder
+    170 # the results. https://www.sqlite.org/lang_returning.html
+    171 sql = f"{sql} RETURNING seq_id, id"  # Pypika doesn't support RETURNING
+--> 172 results = cur.execute(sql, params).fetchall()
+    173 # Reorder the results
+    174 seq_ids = [cast(SeqId, None)] * len(
+    175     results
+    176 )  # Lie to mypy: https://stackoverflow.com/questions/76694215/python-type-casting-when-preallocating-list
+
+OperationalError: attempt to write a readonly database

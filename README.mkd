@@ -74,7 +74,7 @@ In this context, we divided the content of our notes and testing following the G
    3. [Lanmgchain-Huggingface](https://www.philschmid.de/evaluate-llm), or [Langchain](https://docs.smith.langchain.com/evaluation/evaluator-implementations?ref=blog.langchain.dev#correctness-qa-evaluation), or [Langchain](https://github.com/langchain-ai/langsmith-cookbook/blob/main/testing-examples/qa-correctness/qa-correctness.ipynb)    
    4. [Promptfoo]([https://github.com/promptfoo/promptfoo/blob/main/README.md)
 5. Benchmarks
-   1. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
+   1. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main), [whitepaper](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-cognitive-search-outperforming-vector-search-with-hybrid/ba-p/3929167)
    2. [FinQA](https://aclanthology.org/2021.emnlp-main.300/), [github](https://github.com/castillosebastian/FinQA)
    3. [TAT-QA](https://aclanthology.org/2021.acl-long.254.pdf), [github](https://nextplusplus.github.io/TAT-QA/)
    4. [ConFIRM](https://arxiv.org/abs/2310.13001), [github](https://github.com/WilliamGazeley/ConFIRM)
@@ -134,6 +134,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
 2. [RAG-Survey](https://arxiv.org/abs/2312.10997v1?utm_source=substack&utm_medium=email)
 3. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
+4. AzureVidSeries: [1](https://ignite.microsoft.com/en-US/sessions/24cfc794-f932-4f36-9dbe-d7daa1a1b27c), 
 
 ## Toy App
 

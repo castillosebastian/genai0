@@ -1,0 +1,4 @@
+execute-code
+-https://platform.openai.com/playground?mode=assistant 
+-https://blog.langchain.dev/code-interpreter-api/
+-https://github.com/shroominic/codeinterpreter-api?ref=blog.langchain.dev
