@@ -41,3 +41,4 @@ bitsandbytes
 python-dotenv
 azure-ai-formrecognizer
 qdrant-client
+lark
