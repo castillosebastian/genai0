@@ -1,0 +1,15 @@
+Hybrid-search:  https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview
+                https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-cognitive-search-outperforming-vector-search-with-hybrid/ba-p/3929167 
+
+Azure-CosmoDB-forMongoDBCore
+    Usa sintaxis MongoQL: https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/vcore/vector-search
+    https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/vcore/ 
+    vector-search: https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/vcore/vector-search 
+    Integración con Langchain: https://python.langchain.com/docs/integrations/vectorstores/azure_cosmos_db
+
+Langchain AzureAiSearch
+    https://python.langchain.com/docs/integrations/vectorstores/azuresearch#perform-a-hybrid-search
+    https://python.langchain.com/docs/integrations/vectorstores/azuresearch
+    https://github.com/langchain-ai/langchain/blob/master/libs/community/langchain_community/vectorstores/azuresearch.py#L243
+
+NO APLICA PORQUE LOS CASOS DE USOS PUEDEN NO CONTENER REFERENCIAS DIRECTAS A ENTIDADES. Dado esto último y para mejorar los resultados de recuperación: podemos usar NER contra un ìndice de companìas para filtrar nuestra base de datos, y luego aplicar hybrid search. Si el reconocimiento de entidades arroja 1 match, la busqueda continua, si 2 se repregunta hasta llegar a 1. En el caso de más de una companía sigue el mismo patron hasta identificar las referencias.

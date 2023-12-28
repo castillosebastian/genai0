@@ -1,0 +1,2 @@
+- automated tagging of documents (matadata) https://python.langchain.com/docs/integrations/document_transformers/openai_metadata_tagger
+- metadata: https://python.langchain.com/docs/modules/data_connection/retrievers/self_query/ 

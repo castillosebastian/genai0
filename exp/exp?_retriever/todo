@@ -1,1 +1,4 @@
 - related_works/RAG_OpenAI_Langchain/04_retrieval.ipynb 
+self-query-retriever
+- muy importante: https://python.langchain.com/docs/modules/data_connection/retrievers/self_query/
+- https://github.com/langchain-ai/langchain/blob/master/cookbook/self_query_hotel_search.ipynb
