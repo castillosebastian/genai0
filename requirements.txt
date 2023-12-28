@@ -42,3 +42,5 @@ python-dotenv
 azure-ai-formrecognizer
 qdrant-client
 lark
+pymongo
+spacy
