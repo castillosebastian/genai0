@@ -44,3 +44,5 @@ qdrant-client
 lark
 pymongo
 spacy
+wget
+gradio

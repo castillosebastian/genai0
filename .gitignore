@@ -3,6 +3,8 @@
 /data/financebench/collection
 /data/financebench/meta.json
 /data/financebench/.lock
+/src/azure-aisearch-config.ipynb
+/exp/exp10_azure-ai-search_retriever/config.py
 .genai0
 .env
 set_env.py
