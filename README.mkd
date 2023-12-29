@@ -31,7 +31,7 @@ In this context, we divided the content of our notes and testing following the G
       3. Multimodality: [Langchain](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_multi_modal_RAG_LLaMA2.ipynb?ref=blog.langchain.dev), [RAG-table-image](https://github.com/langchain-ai/langchain/blob/master/cookbook/Semi_structured_and_multi_modal_RAG.ipynb?ref=blog.langchain.dev),   
    3. Legal compliance requirements? *High Risk AI* according to [EU_AI_Act](https://artificialintelligenceact.com/), [Consumer_Financial_Protectional_Bureau_US_on_Chatbots](https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/), 
    4. Solutions (well, almost): 
-      1. [Azure-AISearch-OpenAI](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/README.md)
+      1. [RAG-ADVACE_Azure-AISearch-OpenAI](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/README.md), [RAG-SIPLE_Azure_AISearch-OpenAI](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator/blob/main/docs/LOCAL_DEPLOYMENT.md)
          1. Test-OpenAI-Chat: [Playground](https://platform.openai.com/playground?mode=chat)
       2. [SECInsights](https://github.com/run-llama/sec-insights)
       3. [OpenAI-RAG](https://cookbook.openai.com/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant)
@@ -119,6 +119,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
       8. Ensembles: [EnsembleRetriever](https://python.langchain.com/docs/modules/data_connection/retrievers/ensemble?ref=blog.langchain.dev)
 2. VDB (for performace comparison: [vectorview](https://benchmark.vectorview.ai/vectordbs.html), [ANN-Benchmarks](https://ann-benchmarks.com/index.html))
    1. [Qdrant](https://qdrant.tech/documentation/), [llamaQdrant](https://docs.llamaindex.ai/en/stable/examples/vector_stores/QdrantIndexDemo.html), [performance_evaluation](https://qdrant.tech/benchmarks/)
+   2. [Azure_AI-Searh_docu](https://learn.microsoft.com/en-us/azure/search/vector-search-filters), [vector-search](https://github.com/Azure/azure-search-vector-samples), [code](https://github.com/Azure/azure-search-vector-samples/tree/main/demo-python)
 3. DB configuration:
    1. [RAG in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview), [video](https://ignite.microsoft.com/en-US/sessions/18618ca9-0e4d-4f9d-9a28-0bc3ef5cf54e?source=sessions)
 
