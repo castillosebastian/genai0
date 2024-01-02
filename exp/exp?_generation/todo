@@ -1,1 +1,2 @@
+OS-LLM: https://github.com/cpacker/MemGPT/blob/main/memgpt/prompts/system/memgpt_doc.txt
 Generación en formato json: https://platform.openai.com/docs/guides/text-generation/json-mode

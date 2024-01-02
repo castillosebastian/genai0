@@ -44,12 +44,12 @@ In this context, we divided the content of our notes and testing following the G
    2. [FinMA](https://huggingface.co/ChanceFocus/finma-7b-full)
    3. [FinGPT](https://huggingface.co/FinGPT)
    4. [Mistral-7b](https://huggingface.co/docs/transformers/main/model_doc/mistral)
-   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961), [4](https://arxiv.org/pdf/2305.14705.pdf)      
-   6. [finBert](https://huggingface.co/yiyanghkust/finbert-pretrain)
-   7. [FinanceConnect-13b](https://huggingface.co/ceadar-ie/FinanceConnect-13B)
-   8. [LLM360](https://www.llm360.ai/)
-   9. ...
-   10. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), interesting info (e.g.Training Chronicles)  
+   5. [Mistral-8x7b-SMoe](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), [mistral-on-colab](https://github.com/dvmazur/mixtral-offloading/blob/master/notebooks/demo.ipynb), [2](https://huggingface.co/blog/mixtral), [3](https://arxiv.org/abs/2101.03961), [4](https://arxiv.org/pdf/2305.14705.pdf)      
+   8. [finBert](https://huggingface.co/yiyanghkust/finbert-pretrain)
+   9. [FinanceConnect-13b](https://huggingface.co/ceadar-ie/FinanceConnect-13B)
+   10. [LLM360](https://www.llm360.ai/)
+   11. ...
+   12. Private Models: [BloombergGPT](https://arxiv.org/abs/2303.17564), interesting info (e.g.Training Chronicles)  
 
 3. Adapt and Align (AA):  
    1. AA:Prompt:    
@@ -135,6 +135,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 2. [RAG-Survey](https://arxiv.org/abs/2312.10997v1?utm_source=substack&utm_medium=email)
 3. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
 4. AzureVidSeries: [1](https://ignite.microsoft.com/en-US/sessions/24cfc794-f932-4f36-9dbe-d7daa1a1b27c), 
+5. [Azure-AI-Search](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-query?tabs=query-2023-11-01%2Cfilter-2023-11-01)
 
 ## Toy App
 
