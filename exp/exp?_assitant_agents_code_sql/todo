@@ -4,6 +4,9 @@ execute-code
 -https://blog.langchain.dev/code-interpreter-api/
 -https://github.com/shroominic/codeinterpreter-api?ref=blog.langchain.dev
 
+SQL
+-https://towardsdatascience.com/can-llms-replace-data-analysts-getting-answers-using-sql-8cf7da132259
+
 Warnings:
 
 "While GPT models that have been finetuned for function-calling still require a parser to verify outputs as valid function syntax, we observed that GPT-4 function fine-tuned models rarely made syntactic or semantic errors on the MemGPT function set, whereas GPT-3.5 finetuned models consistently generated incorrect function calls, or used attempted to use functions incorrectly. Similarly, we also found that the most popular the Llama 2 70B model variants (even those fine-tuned for function calling) would consistently generate incorrect function calls or even hallucinate functions outside the providede schema. At present reasonable performance is only achieved using specialized GPT-4 models". cfr.MemGPT, pag.13.-

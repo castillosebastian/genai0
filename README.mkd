@@ -157,3 +157,4 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 - [vector_search](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)
 
 1. **Generation**
+- [Langchain-cookbook](https://python.langchain.com/cookbook)
