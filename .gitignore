@@ -5,6 +5,7 @@
 /data/financebench/.lock
 /src/azure-aisearch-config.ipynb
 /exp/exp10_azure-ai-search_retriever/config.py
+/exp/RAG_toy.ipynb
 .genai0
 .env
 set_env.py
