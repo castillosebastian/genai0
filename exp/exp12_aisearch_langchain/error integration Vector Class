@@ -1,0 +1,2 @@
+Can confirm, upwards of 11.4.0b8, azure-search-documents no longer provides the Vector class, 
+so langchain integration does not support latest non-preview release of azure-search-documents (11.4.0).
