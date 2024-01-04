@@ -9,8 +9,8 @@
   2) 1 page 3M-10k-2022, MD&A = 707 tokens / 4650 characters 
 
 - Statistics (arXiv:2310.08560)
-  gpt-3.5-turbo API 4k tokens           60 total messages 
-  gpt-4 API 8k tokens                   140 total messages 
-  gpt-3.5-turbo-16k API 16k tokens      300 total messages
+  1) gpt-3.5-turbo API 4k tokens           60 total messages     
+  2) gpt-4 API 8k tokens                   140 total messages     
+  3) gpt-3.5-turbo-16k API 16k tokens      300 total messages      
 
 
