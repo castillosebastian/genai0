@@ -46,4 +46,4 @@ pymongo
 spacy
 wget
 gradio
-azure-search-documents==11.4.0
+azure-search-documents==11.4.0b8
