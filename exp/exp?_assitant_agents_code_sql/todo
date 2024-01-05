@@ -1,8 +1,8 @@
 execute-code
 - https://lucas-soares.medium.com/building-llm-agents-in-3-levels-of-complexity-from-scratch-openai-functions-langchain-bec68b451b84
--https://platform.openai.com/playground?mode=assistant 
--https://blog.langchain.dev/code-interpreter-api/
--https://github.com/shroominic/codeinterpreter-api?ref=blog.langchain.dev
+- https://platform.openai.com/playground?mode=assistant 
+- https://blog.langchain.dev/code-interpreter-api/
+- https://github.com/shroominic/codeinterpreter-api?ref=blog.langchain.dev
 
 SQL
 -https://towardsdatascience.com/can-llms-replace-data-analysts-getting-answers-using-sql-8cf7da132259
