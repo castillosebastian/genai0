@@ -3,7 +3,10 @@
 # Globant
 # Advance_RAG
 # Backend
-# reference: https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/search/azure-search-documents/samples/sample_vector_search.py
+# reference: 
+#   https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/search/azure-search-documents
+#   https://azuresdkdocs.blob.core.windows.net/$web/python/azure-search-documents/latest/index.html
+#   https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/search/azure-search-documents/samples/sample_vector_search.py
 # --------------------------------------------------------------------------
 
 """
@@ -20,7 +23,7 @@ USAGE:
 """
 
 import os
-
+# See logging https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/search/azure-search-documents
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 from azure.search.documents.indexes import SearchIndexClient
@@ -162,7 +165,7 @@ def single_vector_search_with_filter(query = None, k_nearest_neighbors=5, top=5,
     search_client = SearchClient(service_endpoint, index_name, AzureKeyCredential(key))
     vector_query = VectorizedQuery(vector=get_embeddings(query), k_nearest_neighbors=k_nearest_neighbors, fields="contentVector")
 
-    filter_expression = f'category eq {str_to_filter}'
+    filter_expression = f"company_name eq '{str_to_filter}'"
 
     results = search_client.search(
         search_text="",
@@ -187,8 +190,7 @@ def simple_hybrid_search(query = None, k_nearest_neighbors=5, top=5):
         vector_queries=[vector_query],
         select=["id", "company_name", "source", "doc_type", "page_content"],
         top=top
-    )
-    print(results.get_answers())
+    )    
     for result in results:
         print(result)
     # [END simple_hybrid_search]
@@ -207,6 +209,8 @@ if __name__ == "__main__":
     k_nearest_neighbors=5
     top=5
 
-    single_vector_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
-    #single_vector_search_with_filter()
-    #simple_hybrid_search()
+    # all working as expected!
+    
+    #single_vector_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
+    #single_vector_search_with_filter(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, str_to_filter='MICROSOFT')
+    #simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
