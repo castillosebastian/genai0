@@ -1,0 +1,18 @@
+,doc_name,question_type,question,answer,rag-toy_answer
+48,BESTBUY_2017_10K,metrics-generated,"In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",2.8%,"The FY2015 - FY2017 3 year average net profit margin for Best Buy is 2.8%.
+SOURCES: Company: BESTBUY, SEC report: 10K (reference doc:""../../data/financebench/BESTBUY_2017_10K.pdf"", reference_score:0.02955133654177189 - id:966)."
+49,BESTBUY_2019_10K,metrics-generated,What is the year end FY2019 total amount of inventories for Best Buy? Answer in USD millions. Base your judgments on the information provided primarily in the balance sheet.,$5409.00,"The year end FY2019 total amount of inventories for Best Buy is not provided in the given information. 
+SOURCES: 10K report of Best Buy for FY2019 (reference doc:""../../data/financebench/BESTBUY_2019_10K.pdf"")"
+88,JOHNSON&JOHNSON_2022Q4_EARNINGS,novel-generated,Is growth in JnJ's adjusted EPS expected to accelerate in FY2023?,"No, rate of growth in adjusted EPS is expected to decelerate slightly from 3.6% in FY2022 to 3.5% in FY2023.","Growth in JnJ's adjusted EPS is expected to accelerate in FY2023. The company guides for adjusted operational EPS of $10.50 in FY2023, reflecting growth of 3.5%. 
+SOURCES: Company: JOHNSON&JOHNSON, SEC report: EARNINGS (reference doc:""../../data/financebench/JOHNSON&JOHNSON_2022Q4_EARNINGS.pdf"")"
+89,JOHNSON&JOHNSON_2022Q4_EARNINGS,novel-generated,How did JnJ's US sales growth compare to international sales growth in FY2022?,US sales increased 3.0% vs international sales decline of 0.6%.,"The information provided does not specify the exact sales growth of JnJ's US and international segments in FY2022. Therefore, it is not possible to compare the growth rates between the two segments based on the given information.
+SOURCES: N/A"
+111,MICROSOFT_2023_10K,domain-relevant,Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?,No. Microsoft decreased its debt by $2.5bn in FY 2023 vs FY 2022.,"There is no information provided to determine whether Microsoft increased its debt on the balance sheet between FY2023 and the FY2022 period.
+SOURCES: None"
+133,Pfizer_2023Q2_10Q,novel-generated,How much does Pfizer expect to pay to spin off Upjohn in the future in USD million?,77.78,"Pfizer expects to incur costs of approximately $700 million in connection with separating Upjohn.
+SOURCES: Company: PFIZER, SEC report: 10Q (reference doc:""../../data/financebench/Pfizer_2023Q2_10Q.pdf"", reference_score:0.03205128386616707 - id:714)"
+134,Pfizer_2023Q2_10Q,novel-generated,"For Pfizer, which geographic region had the biggest drop in Q22023 year over year revenues (on a percentage basis)?",Developed Rest of the World,"In the second quarter of 2023, Pfizer experienced the biggest drop in year-over-year revenues on a percentage basis in the Developed Rest of World geographic region, with a decline of 74%. 
+SOURCES: Pfizer 2023Q2 10Q report (pages 30-31)"
+135,Pfizer_2023Q2_10Q,novel-generated,"As of Q2'2023, is Pfizer spinning off any large business segments?","Yes, it's spinning off Upjohn.","As of Q2'2023, Pfizer is not spinning off any large business segments.
+SOURCES: 
+- Pfizer Q2 2023 10Q report (reference doc:""../../data/financebench/Pfizer_2023Q2_10Q.pdf"")"
