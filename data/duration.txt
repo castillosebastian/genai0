@@ -1,0 +1,2 @@
+For query: Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?
+Duration for 10 queries: 27.828409671783447 seconds

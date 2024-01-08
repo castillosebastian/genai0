@@ -7,6 +7,7 @@
 #   https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/search/azure-search-documents
 #   https://azuresdkdocs.blob.core.windows.net/$web/python/azure-search-documents/latest/index.html
 #   https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/search/azure-search-documents/samples/sample_vector_search.py
+#   SearchClient https://learn.microsoft.com/en-us/python/api/azure-search-documents/azure.search.documents.searchclient?view=azure-python    
 # --------------------------------------------------------------------------
 
 """
@@ -20,9 +21,16 @@ USAGE:
     1) AZURE_SEARCH_SERVICE_ENDPOINT - the endpoint of your Azure Cognitive Search service
     2) AZURE_SEARCH_INDEX_NAME - the name of your search index (e.g. "hotels-sample-index")
     3) AZURE_SEARCH_API_KEY - your search API key
+TODO:
+    1) SEMANTIC SEARCH!
+    2) MAXIMUM MARGINAL RELEVANCE! To adress diversity and avoid redundancy in retrieved documents
+
 """
 
 import os
+from tqdm import tqdm
+import time 
+import json
 # See logging https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/search/azure-search-documents
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
@@ -180,7 +188,7 @@ def single_vector_search_with_filter(query = None, k_nearest_neighbors=5, top=5,
     # [END single_vector_search_with_filter]
 
 
-def simple_hybrid_search(query = None, k_nearest_neighbors=5, top=5):
+def simple_hybrid_search(query = None, k_nearest_neighbors=5, top=5, savetodisk=False):
     # [START simple_hybrid_search]
     search_client = SearchClient(service_endpoint, index_name, AzureKeyCredential(key))
     vector_query = VectorizedQuery(vector=get_embeddings(query), k_nearest_neighbors=k_nearest_neighbors, fields="contentVector")
@@ -191,9 +199,50 @@ def simple_hybrid_search(query = None, k_nearest_neighbors=5, top=5):
         select=["id", "company_name", "source", "doc_type", "page_content"],
         top=top
     )    
+
+    doc = []
     for result in results:
-        print(result)
-    # [END simple_hybrid_search]
+        doc.append(result)
+
+    if savetodisk:
+        with open('results.json', 'w') as json_file:
+            json.dump(doc, json_file, indent=4)    
+
+    return doc    
+
+
+def semantic_search():
+    #https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/search/azure-search-documents/samples/sample_semantic_search.py
+    pass
+
+
+def test_QS(n, query, k_nearest_neighbors, top):
+    results_docs = []
+    start_time = time.time()
+
+    for _ in tqdm(range(n)):
+        docs = []
+        results = simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
+        for result in results:
+            docs.append(result)
+        results_docs.append(docs)
+
+    end_time = time.time()
+    duration = end_time - start_time
+
+    # Check if 'duration.txt' exists and update the file accordingly
+    if os.path.exists('duration.txt'):
+        with open('data/duration.txt', 'a') as file:  # Append to the existing file
+            file.write(f"For query: {query}\nDuration for {n} queries: {duration} seconds\n")
+    else:
+        with open('data/duration.txt', 'w') as file:  # Create a new file
+            file.write(f"For query: {query}\nDuration for {n} queries: {duration} seconds\n")
+
+    # Save results to a JSON file
+    with open('data/results.json', 'w') as json_file:
+        json.dump(results_docs, json_file, indent=4)
+
+    return results_docs, duration
 
 
 if __name__ == "__main__":
@@ -206,11 +255,16 @@ if __name__ == "__main__":
     #client.upload_documents(documents=docs)
 
     query = "What is the Revenue of Microsoft in 2023"
+    #query = "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place."
+    #query = "Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?"
     k_nearest_neighbors=5
     top=5
 
-    # all working as expected!
-    
+    # all working as expected!    
     #single_vector_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
     #single_vector_search_with_filter(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, str_to_filter='MICROSOFT')
-    #simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
+    #simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, savetodisk=True)
+       
+    # Example usage
+    results = test_QS(n=10, query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)   
+    
