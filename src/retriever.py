@@ -168,6 +168,7 @@ def single_vector_search(query = None, k_nearest_neighbors=5, top=5):
 
 def single_vector_search_with_filter(query = None, k_nearest_neighbors=5, top=5, str_to_filter=None):
     # [START single_vector_search_with_filter]    
+    # source: https://learn.microsoft.com/en-us/azure/search/search-filters
 
     search_client = SearchClient(service_endpoint, index_name, AzureKeyCredential(key))
     vector_query = VectorizedQuery(vector=get_embeddings(query), k_nearest_neighbors=k_nearest_neighbors, fields="contentVector")
@@ -202,12 +203,36 @@ def simple_hybrid_search(query = None, k_nearest_neighbors=5, top=5, savetodisk=
     doc = []
     for result in results:
         doc.append(result)
+        print(result)
 
     if savetodisk:
         with open('results.json', 'w') as json_file:
             json.dump(doc, json_file, indent=4)    
 
     return doc    
+
+
+def hybrid_search_with_filter(query = None, k_nearest_neighbors=5, top=5, str_to_filter=None):
+    # [START single_vector_search_with_filter]    
+    # https://learn.microsoft.com/en-us/azure/search/search-filters
+
+    search_client = SearchClient(service_endpoint, index_name, AzureKeyCredential(key))
+    vector_query = VectorizedQuery(vector=get_embeddings(query), k_nearest_neighbors=k_nearest_neighbors, fields="contentVector")
+
+    filter_expression = f"doc_year eq '{str_to_filter}'"
+
+    results = search_client.search(
+        search_text=query,
+        vector_queries=[vector_query],        
+        filter=filter_expression,
+        select=["id", "company_name", "source", "doc_type", "page_content"],
+        top=top
+    )
+
+    for result in results:
+        print(result)
+    # [END single_vector_search_with_filter]
+
 
 
 def semantic_search():
@@ -253,7 +278,7 @@ if __name__ == "__main__":
     #docs = get_documents()
     #client.upload_documents(documents=docs)
 
-    query = "What is the Revenue of Microsoft in 2023"
+    query = "What is the total assets in the Balance Sheets"
     #query = "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place."
     #query = "Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?"
     k_nearest_neighbors=5
@@ -262,8 +287,9 @@ if __name__ == "__main__":
     # all working as expected!    
     #single_vector_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)
     #single_vector_search_with_filter(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, str_to_filter='MICROSOFT')
-    #simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, savetodisk=True)
+    #simple_hybrid_search(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, savetodisk=False)
+    hybrid_search_with_filter(query=query, k_nearest_neighbors=k_nearest_neighbors, top=top, str_to_filter='2017')
        
-    # Example usage
-    results = test_QS(n=10, query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)   
+    # Test QS
+    # results = test_QS(n=10, query=query, k_nearest_neighbors=k_nearest_neighbors, top=top)   
     
