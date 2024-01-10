@@ -138,6 +138,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 3. [FinanceBench](https://huggingface.co/datasets/PatronusAI/financebench), [github](https://github.com/patronus-ai/financebench/tree/main)
 4. AzureVidSeries: [1](https://ignite.microsoft.com/en-US/sessions/24cfc794-f932-4f36-9dbe-d7daa1a1b27c), 
 5. [Azure-AI-Search](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-query?tabs=query-2023-11-01%2Cfilter-2023-11-01)
+6. [Terrible-RAG-Systems](https://jxnl.github.io/blog/writing/2024/01/07/inverted-thinking-rag/#we-should-not-have-to-build-special-injestion-pipelines)
 
 ## Toy App
 
