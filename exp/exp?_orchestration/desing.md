@@ -18,4 +18,5 @@
 7. **Answer**: Presents a complete and detailed final response to the user.
 8. Chat-history?
 9. Demostrate-Search-Predict: python classes!
+10. Self-Aware?
    
