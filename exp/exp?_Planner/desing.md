@@ -5,10 +5,7 @@
 
 ![Alt text](semantic_kernell.png)
 
-
-
 - Self-Conciusness module (First, we argue that simple task-agnostic pipelines for incontext learning should give way to deliberate, task-aware strategies.)
-  
   - https://github.com/castillosebastian/dspy
   - Asses the quality of informations "Enhancing Retrieval-Augmented Large Language Models with Iterative Retrieval-Generation Synergy"
   - https://github.com/stanfordnlp/dspy
