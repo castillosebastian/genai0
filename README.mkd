@@ -138,7 +138,7 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 ## Semantic Kernel
 1. [Doc](https://learn.microsoft.com/es-mx/semantic-kernel/)
 2. [Repo](https://github.com/microsoft/semantic-kernel)
-3. [Repo-Python-Examples](https://github.com/microsoft/semantic-kernel/blob/main/python/README.md)
+3. [Repo-Python-Examples](https://github.com/microsoft/semantic-kernel/blob/main/python/README.md), [Examples2](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/kernel-syntax-examples)
 4. [Videos](https://www.youtube.com/playlist?list=PL20mfA9efrmMmLEy1fhFDvB_OmUpNUFqB)
 
 ## Bib and ref

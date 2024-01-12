@@ -1,1 +1,7 @@
+
+- Se puede crear un dataset de preferencias humanas con las respuestas de LLMs:
+  - Las respuestas 'correctas' se generan con GPT4
+  - Las respuestas 'incorrectas' se generan con un modelo menos performante, ej 'Llama'.
+  
 https://platform.openai.com/docs/guides/fine-tuning/use-a-fine-tuned-model 
+https://towardsdatascience.com/fine-tune-a-mistral-7b-model-with-direct-preference-optimization-708042745aac
