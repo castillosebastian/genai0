@@ -1,7 +1,12 @@
 
-1. Failed to answer:
+1. Trial A: https:/https://platform.openai.com/playground/platforfiltered_augmented_financebench_sample_8_t0.1m.openai.com/playground
+   RESULT: Failed to answer 
    
-    "As per the income statement, what is the mean net profit margin for Best Buy for the fiscal years 2015, 2016, and 2017? Please provide the answer as a percentage, rounded to one decimal place."
+    **RAG_toy**:    
+    Q: "As per the income statement, what is the mean net profit margin for Best Buy for the fiscal years 2015, 2016, and 2017? Please provide the answer as a percentage, rounded to one decimal place."
+    A: The average net profit margin for Best Buy for the fiscal years 2015 through 2017 was not provided in the extracted parts of the document.
+    SOURCES: SEC report: 10K (reference doc:"../../data/financebench/BESTBUY_2017_10K.pdf")
+    ---
 
     PROBLEM DETECTED:
         - CONTEST RELEVANCE: Low, too much noise.
@@ -25,9 +30,14 @@
 
        Therefore, the mean net profit margin for Best Buy for the fiscal years 2015, 2016, and 2017 is 2.7%. SOURCES: Company: BESTBUY, SEC report: 10K
 
-2. Failed to answer:   
+2. Trial B: https:/https://platform.openai.com/playground/platforfiltered_augmented_financebench_sample_8_t0.1m.openai.com/playground
+   RESULT: Failed to answer 
    
-   'From the balance sheet provided, could you calculate Best Buy's total inventory value at the conclusion of fiscal year 2019? Ensure your response is in USD millions.'
+   **RAG_toy**:
+   Q: 'From the balance sheet provided, could you calculate Best Buy's total inventory value at the conclusion of fiscal year 2019? Ensure your response is in USD millions.'
+   A: The total amount of inventories held by Best Buy at the close of FY2019 was $10,310 million.
+    SOURCES: Company: BESTBUY, SEC report: 10K (reference doc:"../../data/financebench/BESTBUY_2019_10K.pdf", reference_score:0.029957523569464684 - id:1630)
+   --- 
 
    PROBLEM DETECTED:
     - CONTEXT RELEVANCE: low, too much noise
