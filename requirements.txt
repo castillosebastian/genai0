@@ -47,3 +47,4 @@ spacy
 wget
 gradio
 azure-search-documents==11.4.0
+semantic-kernel
