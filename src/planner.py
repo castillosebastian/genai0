@@ -108,3 +108,28 @@ if __name__ == "__main__":
     import asyncio
 
     asyncio.run(main())
+
+
+# https://oktay-burak-ertas.medium.com/semantic-kernel-fundamentals-5c6a53005a3c
+
+kernel = sk.Kernel()
+
+    azure_chat_service = AzureChatCompletion(
+        deployment_name="gpt-35-turbo-16k",
+        endpoint=os.getenv("OPENAI_ENDPOINT"),
+        api_key=os.getenv("OPENAI_API_KEY"),
+    )
+
+    azure_embedding_service = AzureTextEmbedding(
+        deployment_name="text-embedding-ada-002",
+        endpoint=os.getenv("OPENAI_ENDPOINT"),
+        api_key=os.getenv("OPENAI_API_KEY"),
+    )
+
+    kernel.add_chat_service("azure_chat_completion", azure_chat_service)
+    kernel.add_text_embedding_generation_service("ada", azure_embedding_service)
+
+
+    generateContent = kernel.import_semantic_skill_from_directory(
+        "ai/skills", "generateContent"
+    )

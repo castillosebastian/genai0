@@ -3,9 +3,6 @@ from semantic_kernel.connectors.ai.open_ai import (
     AzureTextEmbedding,
 )
 import semantic_kernel as sk
-from utils.constants import (
-    OPENAI_DEPLOYMENT_NAME, OPENAI_ENDPOINT, OPENAI_API_KEY
-)
 import asyncio
 from typing import Tuple
 
@@ -15,6 +12,14 @@ def print_ai_services(kernel):
     print(
         f"Text embedding generation services: {kernel.all_text_embedding_generation_services()}"
     )
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
+deployment_name = os.environ["AZURE_OPENAI_DEPLOYMENT"]
+key = os.environ["OPENAI_API_KEY"]
+embeddings = os.environ["OPENAI_EMBEDDINGS_MODEL_NAME"]
 
 # Will be saved in embeddings
 async def populate_memory(kernel: sk.Kernel) -> None:
@@ -69,6 +74,7 @@ async def setup_chat_with_memory(
     - {{$fact2}} {{recall $fact2}}
     - {{recall $fact3}}
     - {{recall $fact4}}
+    - {{$fact6}} {{recall $fact6}}
     +++++
 
     Chat:
@@ -86,6 +92,14 @@ async def setup_chat_with_memory(
     context["fact2"] = "where do I live?"
     context["fact3"] = "How many poeple are there in my family?"
     context["fact4"] = "When did I graduate from college?"
+    context["fact5"] = "How many poeple are there in my family?"
+    context["fact6"] = """
+        4. Assessing IT Infrastructure for Remote Work
+    - Reliable internet connection and bandwidth requirements
+    - Secure and efficient VPN setup
+    - Access to necessary software and tools
+    - Backup and data protection measures
+    """
 
 
     context[sk.core_skills.TextMemorySkill.COLLECTION_PARAM] = "aboutMe"
@@ -149,8 +163,59 @@ async def main():
 
     # End of Equip Kernel
 
+    github_files ={}
+    github_files["https://github.com/microsoft/semantic-kernel/blob/main/README.md"] = \
+        "README: Installation, getting started, and how to contribute"
+    github_files["https://github.com/microsoft/semantic-kernel/blob/main/dotnet/notebooks/02-running-prompts-from-file.ipynb"] = \
+        "Jupyter notebook describing how to pass prompts from a file to a semantic skill or function"
+    github_files["https://github.com/microsoft/semantic-kernel/blob/main/dotnet/notebooks/00-getting-started.ipynb"] = \
+        "Jupyter notebook describing how to get started with the Semantic Kernel"
+    github_files["https://github.com/microsoft/semantic-kernel/tree/main/samples/skills/ChatSkill/ChatGPT"] = \
+        "Sample demonstrating how to create a chat skill interfacing with ChatGPT"
+    github_files["https://github.com/microsoft/semantic-kernel/blob/main/dotnet/src/SemanticKernel/Memory/Volatile/VolatileMemoryStore.cs"] = \
+        "C# class that defines a volatile embedding store"
 
-    await populate_memory(kernel)
+
+    memory_collection_name = "SKGitHub"
+    print("Adding some GitHub file URLs and their descriptions to a volatile Semantic Memory.");
+    i = 0
+    for entry, value in github_files.items():
+        await kernel.memory.save_reference_async(
+            collection=memory_collection_name,
+            description=value,
+            text=value,
+            external_id=entry,
+            external_source_name="GitHub"
+        )
+        i += 1
+        print("  URL {} saved".format(i))
+
+    ask = "I love Jupyter notebooks, how should I get started?"
+    print("===========================\n" + "Query: " + ask + "\n")
+
+    memories = await kernel.memory.search_async(memory_collection_name, ask, limit=5, min_relevance_score=0.77)
+
+    i = 0
+    for memory in memories:
+        i += 1
+        print(f"Result {i}:")
+        print("  URL:     : " + memory.id)
+        print("  Title    : " + memory.description)
+        print("  Relevance: " + str(memory.relevance))
+        print()
+
+    # from semantic_kernel.connectors.memory.azure_cognitive_search import AzureCognitiveSearchMemoryStore
+
+    # azure_ai_search_api_key, azure_ai_search_url = sk.azure_aisearch_settings_from_dot_env()
+
+    # #text-embedding-ada-002 uses a 1536-dimensional embedding vector
+    # kernel.register_memory_store(
+    #     memory_store=AzureCognitiveSearchMemoryStore(
+    #         vector_size=1536,
+    #         search_endpoint=azure_ai_search_url,
+    #         admin_key=azure_ai_search_api_key
+    #     )
+    # )
 
     print_ai_services(kernel)
 
