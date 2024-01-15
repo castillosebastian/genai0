@@ -137,9 +137,11 @@ e. Set interpreter in Project settings: Type and select "Python: Select Interpre
 
 ## Semantic Kernel
 1. [Doc](https://learn.microsoft.com/es-mx/semantic-kernel/)
-2. [Repo](https://github.com/microsoft/semantic-kernel)
-3. [Repo-Python-Examples](https://github.com/microsoft/semantic-kernel/blob/main/python/README.md), [Examples2](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/kernel-syntax-examples)
-4. [Videos](https://www.youtube.com/playlist?list=PL20mfA9efrmMmLEy1fhFDvB_OmUpNUFqB)
+2. [Glossary](https://github.com/microsoft/semantic-kernel/blob/main/docs/GLOSSARY.md)
+3. [Repo](https://github.com/microsoft/semantic-kernel)
+4. [Repo-Python-Examples](https://github.com/microsoft/semantic-kernel/blob/main/python/README.md), [Examples2](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/kernel-syntax-examples)
+5. [Videos](https://www.youtube.com/playlist?list=PL20mfA9efrmMmLEy1fhFDvB_OmUpNUFqB)
+6. [PLUGINS_SK_&_OpenAI](https://platform.openai.com/docs/plugins/getting-started/) 
 
 ## Bib and ref
 1. [LLMs_in_finance](https://arxiv.org/abs/2311.10723)
